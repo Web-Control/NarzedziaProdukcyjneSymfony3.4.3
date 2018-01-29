@@ -1,0 +1,4 @@
+form:
+    choice:
+        Admin: 'Administrator'
+        Jakosc: 'Menadżer Jakości'

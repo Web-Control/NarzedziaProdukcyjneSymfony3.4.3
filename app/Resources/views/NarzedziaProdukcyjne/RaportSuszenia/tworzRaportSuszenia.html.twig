@@ -1,0 +1,199 @@
+{% extends 'NarzedziaProdukcyjne/ramy.html.twig' %}
+{% block content %}
+{{ parent() }}
+<br>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link {{ app.request.attributes.get('_route') == 'tworzenieRaportuSuszenia' ? 'active' }}" href="{{ path('tworzenieRaportuSuszenia') }}">Tworzenie</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{ app.request.attributes.get('_route') == 'roleUzytkownika' ? 'active' }}" href="#">Odczyt</a>
+  </li>
+</ul>
+
+<br><br>
+
+<div class="container">
+    <div class="row" >
+			<div class="form-group">
+        
+                <h1>Tworzenie raportu suszenia</h1>
+                {{ form_start(dodajDaneSuszeniaForm, {action:path('tworzenieRaportuSuszenia')}, {'attr': {'id': 'dane_suszenia'}}) }}
+            
+                <div class="row">
+					<div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.asortyment) }}
+                    </div>
+                    <div class="col-sm-4">
+                     {{ form_row(dodajDaneSuszeniaForm.nrSuszarni) }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                     {{ form_row(dodajDaneSuszeniaForm.data) }}
+                     </div>
+                     <div class="col-sm-4">
+                      {{ form_row(dodajDaneSuszeniaForm.godzina) }}
+                    </div>
+                </div>
+                <hr>
+
+                 <div class="row">
+                    <div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.predkoscBlanszownika) }}
+                    </div>
+                     <div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.temperaturaBlanszownika) }}
+                    </div>
+                </div>
+                <hr>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.predkoscSiatkiNr7) }}
+                    </div>
+                     <div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.predkoscSiatkiNr6) }}
+                    </div>
+                     <div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.predkoscSiatkiNr5) }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.predkoscSiatkiNr4) }}
+                    </div>
+                     <div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.predkoscSiatkiNr3) }}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.predkoscSiatkiNr2) }}
+                    </div>
+                     <div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.predkoscSiatkiNr1) }}
+                    </div>
+                </div>
+                <hr>
+
+                 <div class="row">
+                    <div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.temperaturaGora) }}
+                    </div>
+                     <div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.temperaturaDol) }}
+                    </div>
+                </div>
+                <hr>
+
+                 <div class="row">
+                    <div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.wilgotnosc) }}
+                    </div>
+                     <div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.wykonawcaPomiaru) }}
+                    </div>
+                </div>
+                <hr>
+
+
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{ form_row(dodajDaneSuszeniaForm.zapisz, {'attr': {'value': 'zapisz'}} ) }}
+                    </div>
+                     <div class="col-sm-2">
+                        {{ form_row(dodajDaneSuszeniaForm.edytuj) }}
+                    </div>
+                     <div class="col-sm-2">
+                         {{ form_row(dodajDaneSuszeniaForm.usun) }}
+                    </div>
+                </div>
+
+                
+                    {# <button  type="submit" class="btn btn-primary">Zapisz</button> #}
+                    <br / ><br / >
+
+                {{ form_end(dodajDaneSuszeniaForm) }}
+            </div>
+        </div>
+    </div>
+
+    {# <br><br>
+    <button class="ajax">click me!</button>
+    <div id="ajax-results">here comes the result </div>   #}
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+
+
+<script>
+
+    //Akcja
+    var zapisz = "";
+    var edytuj = "";
+    var usun = "";
+    
+        jQuery('#dodaj_dane_procesu_suszenia_form_zapisz').click(function () {
+            zapisz = true;
+        });
+
+        jQuery('#dodaj_dane_procesu_suszenia_form_edytuj').click(function () {
+            edytuj = true;
+        });
+
+        jQuery('#dodaj_dane_procesu_suszenia_form_usun').click(function () {
+            usun = true;
+        });
+
+    $("button[type='submit']").click(function(e) {
+    e.preventDefault();
+    
+    var serializedData = "";
+    serializedData = $("form").serialize();
+
+   
+
+        if (zapisz) {
+           serializedData += '&dodaj_dane_procesu_suszenia_form%5Bzapisz%5D';
+        }
+         if (edytuj) {
+           serializedData += '&dodaj_dane_procesu_suszenia_form%5Bedytuj%5D';
+        }
+
+        if (usun) {
+           serializedData += '&dodaj_dane_procesu_suszenia_form%5Busun%5D';
+        }
+
+
+    //serializedData += '&dodaj_dane_procesu_suszenia_form%5Bzapisz%5D';
+
+    console.log(zapisz)
+     console.log(serializedData)
+
+    $.ajax({
+        url: $("form").attr('action'),
+        type: "POST",
+        data: serializedData,
+        async: true,
+                success: function (data)
+                {
+                    zapisz = "";
+                    edytuj = "";
+                    usun = "";
+                    console.log(data)
+                    // $('div#ajax-results').html(data.output);
+                }
+    });
+});
+
+</script>
+
+
+{% endblock %}

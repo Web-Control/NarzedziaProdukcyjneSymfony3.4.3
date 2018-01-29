@@ -1,0 +1,33 @@
+{% extends 'NarzedziaProdukcyjne/ramy.html.twig' %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block content %}
+{{ parent() }}
+
+<br>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link {{ app.request.attributes.get('_route') == 'fos_user_registration_register' ? 'active' }}" href="{{ path('fos_user_registration_register') }}">Rejestracja</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{ app.request.attributes.get('_route') == 'roleUzytkownika' ? 'active' }}" href="{{ path('roleUzytkownika') }}">Role</a>
+  </li>
+</ul>
+<br><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                {{ form_widget(form) }}
+                <div>
+                    <input type="submit" value="{{ 'registration.submit'|trans }}" />
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
