@@ -125,21 +125,24 @@
           {% block content %}
 
             {% for msg in app.session.flashBag.get('success') %}
-            <div class="alert alert-success">
-              {{ msg|raw }}
-            </div>
+              <div class="alert alert-success alert-dismissable">
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                  {{ msg|raw }}
+              </div>
             {% endfor %}
 
             {% for msg in app.session.flashBag.get('warning') %}
-            <div class="alert alert-warning">
-              {{ msg|raw }}
-            </div>
+              <div class="alert alert-warning alert-dismissable">
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                 {{ msg|raw }}
+              </div>
             {% endfor %}
 
             {% for msg in app.session.flashBag.get('error') %}
-            <div class="alert alert-danger">
-              {{ msg|raw }}
-            </div>
+              <div class="alert alert-danger alert-dismissable">
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>
+                {{ msg|raw }}
+              </div>
             {% endfor %}
 
 

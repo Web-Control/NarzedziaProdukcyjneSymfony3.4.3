@@ -11,5 +11,21 @@ use Doctrine\ORM\EntityRepository;
  */
 class DaneSuszeniaRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function raportSuszenia()
+    {
+
+        $conn = $this->getEntityManager()->getConnection();
+        
+        $sql = "SELECT * FROM dane_suszenia ";
+        $stmt = $conn->prepare($sql);
+      //  $stmt->bindValue(1, $id);
+        $stmt->execute();
+        
+        return $stmt->fetchAll();
+       // var_dump($stmt->fetchAll());die;
+        //return json_encode($wynik);
+
+    }
     
 }

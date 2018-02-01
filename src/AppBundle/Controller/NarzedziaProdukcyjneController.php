@@ -56,25 +56,29 @@ class NarzedziaProdukcyjneController extends Controller
 
         // only handles data on POST
         $form->handleRequest($request);
-        dump($form);
+        //dump($form);
         
         if ($form->isSubmitted() && $form->isValid())
          {
             $nowe_dane_suszenia = $form->getData(); //To jest obiekt
             $em = $this->getDoctrine()->getManager();
-            dump($nowe_dane_suszenia);
+           // dump($nowe_dane_suszenia);
 
             //Sprawdzamy czy takie dane juz istnieją
             $dane_istnieja = $em->getRepository('AppBundle:DaneSuszenia')->findOneBy(array('nrSuszarni' => $form->get('nrSuszarni')->getData(), 'data' => $form->get('data')->getData(), 'godzina' => $form->get('godzina')->getData() ));
-            dump($dane_istnieja);
+           // dump($dane_istnieja);
 
              if ($form->getClickedButton() && 'zapisz' === $form->getClickedButton()->getName())
                  {  $dziala = TRUE;
-                    dump($dziala);
 
                     if ($dane_istnieja)
                     {
-                        $this->addFlash('warning', '<b>Uwaga!!!</b> Dane raportu z podanego dnia i godziny już istnieją.');
+                        //$this->addFlash('warning', '<b>Uwaga!!!</b> Dane raportu z podanego dnia i godziny już istnieją.');
+
+                         //Ajax info
+                         $wiadomosc = 'Dane istnieja';
+                         $info = ['info' => $wiadomosc];
+                         return new JsonResponse($info);
 
                         return $this->redirectToRoute('tworzenieRaportuSuszenia'); 
                     }
@@ -83,7 +87,12 @@ class NarzedziaProdukcyjneController extends Controller
                         $em->persist($nowe_dane_suszenia);
                         $em->flush();
 
-                        $this->addFlash('success', '<b>Sukces!!!</b> Zapisano dane raportu. ');
+                       // $this->addFlash('success', '<b>Sukces!!!</b> Zapisano dane raportu. ');
+
+                         //Ajax info
+                        $wiadomosc = 'Zapisano dane';
+                        $info = ['info' => $wiadomosc];
+                        return new JsonResponse($info);
 
                         return $this->redirectToRoute('tworzenieRaportuSuszenia');
                     }
@@ -110,13 +119,18 @@ class NarzedziaProdukcyjneController extends Controller
                     
                     $em->flush();
 
-                    $this->addFlash('success', '<b>Sukces!!!</b> Edytowano dane do raportu. ');
+                   //$this->addFlash('success', '<b>Sukces!!!</b> Edytowano dane do raportu. ');
                     
                    }
                        else
                    {
                       
-                      $this->addFlash('warning', '<b>Uwaga!!!</b> Dane raportu z podanego dnia i godziny nie istnieją.');
+                     // $this->addFlash('warning', '<b>Uwaga!!!</b> Dane raportu z podanego dnia i godziny nie istnieją.');
+
+                      //Ajax info
+                      $wiadomosc = 'Dane nie istnieja';
+                      $info = ['info' => $wiadomosc];
+                      return new JsonResponse($info);
 
                       return $this->redirectToRoute('tworzenieRaportuSuszenia');
                    }
@@ -130,19 +144,40 @@ class NarzedziaProdukcyjneController extends Controller
                     $em->remove($dane_istnieja); 
                     $em->flush();
 
-                   $this->addFlash('success', '<b>Sukces!!!</b> Usunięto dane z raportu. ');
+                  // $this->addFlash('success', '<b>Sukces!!!</b> Usunięto dane z raportu. ');
+
+                   //Ajax info
+                   $wiadomosc = 'Dane usunieto';
+                   $info = ['info' => $wiadomosc];
+                   return new JsonResponse($info);
                    
                   }
                       else
                   {
                      
-                     $this->addFlash('warning', '<b>Uwaga!!!</b> Dane raportu z podanego dnia i godziny nie istnieją.');
+                    // $this->addFlash('warning', '<b>Uwaga!!!</b> Dane raportu z podanego dnia i godziny nie istnieją.');
+
+                      //Ajax info
+                      $wiadomosc = 'Dane nie istnieja';
+                      $info = ['info' => $wiadomosc];
+                      return new JsonResponse($info);
 
                      return $this->redirectToRoute('tworzenieRaportuSuszenia');
                   }
               }  
-              
-              
+
+                // $x = 'Działa';
+                
+                // $raport = ['output' => $x];
+                // return new JsonResponse($raport);
+                $dane_z_bazy = $this->getDoctrine()
+            ->getRepository('AppBundle:DaneSuszenia')
+            ->raportSuszenia();
+                dump($dane_z_bazy);
+                
+                 //$x = 'TAK';
+                 $info = ['raport' => $dane_z_bazy];
+                 return new JsonResponse($info);  
 
         }
       

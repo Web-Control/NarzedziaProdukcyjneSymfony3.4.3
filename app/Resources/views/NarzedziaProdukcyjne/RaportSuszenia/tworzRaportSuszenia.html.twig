@@ -121,9 +121,11 @@
         </div>
     </div>
 
-    {# <br><br>
-    <button class="ajax">click me!</button>
-    <div id="ajax-results">here comes the result </div>   #}
+   <br>
+   <div id="info"></div>
+
+   <br><br>
+   <div id="raport"></div>
 
 
 
@@ -172,24 +174,61 @@
         }
 
 
-    //serializedData += '&dodaj_dane_procesu_suszenia_form%5Bzapisz%5D';
-
-    console.log(zapisz)
-     console.log(serializedData)
-
     $.ajax({
         url: $("form").attr('action'),
         type: "POST",
         data: serializedData,
         async: true,
-                success: function (data)
-                {
+            success: function (data)
+             {
+                    
+                if (zapisz) 
+                {   
+                     if (data.info == "Dane istnieja")
+                    {
+                       jQuery('#info').html('<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Dane raportu z podanego dnia i godziny już istnieją.</div>') 
+                    }
+
+                    if (data.info == "Zapisano dane")
+                    {
+                    jQuery('#info').html('<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Sukces!!!</b>&nbsp Dane zostały zapisane.</div>')
+                    }
+                }
+
+                 if (edytuj) 
+                {    
+                    if (data.info == "Dane nie istnieja")
+                    {
+                       jQuery('#info').html('<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Dane raportu z podanego dnia i godziny nie istnieją.</div>') 
+                    } else
+                        {
+                        jQuery('#info').html('<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Sukces!!!</b>&nbsp Wybrane dane zostały edytowane.</div>')
+                        }
+
+                }
+
+                 if (usun) 
+                 { 
+                      if (data.info == "Dane usunieto")
+                    {
+                        jQuery('#info').html('<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Sukces!!!</b>&nbsp Wybrane dane zostały usunięte.</div>')
+                    }
+
+                     if (data.info == "Dane nie istnieja")
+                    {
+                       jQuery('#info').html('<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Dane raportu z podanego dnia i godziny nie istnieją.</div>') 
+                    }
+
+                }
+
                     zapisz = "";
                     edytuj = "";
                     usun = "";
+
                     console.log(data)
-                    // $('div#ajax-results').html(data.output);
-                }
+
+                    $('div#raport').html(data.raport);
+            }
     });
 });
 
