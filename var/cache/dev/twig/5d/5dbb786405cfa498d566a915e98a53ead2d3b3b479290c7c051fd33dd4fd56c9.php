@@ -22,29 +22,29 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f84e14928de3a64124dc4e0ba42a08d5f262c1a6a49a8d02b89af8c604ca4935 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_f84e14928de3a64124dc4e0ba42a08d5f262c1a6a49a8d02b89af8c604ca4935->enter($__internal_f84e14928de3a64124dc4e0ba42a08d5f262c1a6a49a8d02b89af8c604ca4935_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
+        $__internal_0dd3f0558b71811e778e53b262f1dc86bab1fb746d6ece8bfa41d8ad961617de = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_0dd3f0558b71811e778e53b262f1dc86bab1fb746d6ece8bfa41d8ad961617de->enter($__internal_0dd3f0558b71811e778e53b262f1dc86bab1fb746d6ece8bfa41d8ad961617de_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
 
-        $__internal_6f45f94f9fd880513822291dfd14de1617a6a86fd9b38a78da22334cb11b061d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_6f45f94f9fd880513822291dfd14de1617a6a86fd9b38a78da22334cb11b061d->enter($__internal_6f45f94f9fd880513822291dfd14de1617a6a86fd9b38a78da22334cb11b061d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
+        $__internal_50d7df7519561f5d212db90ab091544c4d6d148508b71e9db3520a829b936c8e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_50d7df7519561f5d212db90ab091544c4d6d148508b71e9db3520a829b936c8e->enter($__internal_50d7df7519561f5d212db90ab091544c4d6d148508b71e9db3520a829b936c8e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_f84e14928de3a64124dc4e0ba42a08d5f262c1a6a49a8d02b89af8c604ca4935->leave($__internal_f84e14928de3a64124dc4e0ba42a08d5f262c1a6a49a8d02b89af8c604ca4935_prof);
+        $__internal_0dd3f0558b71811e778e53b262f1dc86bab1fb746d6ece8bfa41d8ad961617de->leave($__internal_0dd3f0558b71811e778e53b262f1dc86bab1fb746d6ece8bfa41d8ad961617de_prof);
 
         
-        $__internal_6f45f94f9fd880513822291dfd14de1617a6a86fd9b38a78da22334cb11b061d->leave($__internal_6f45f94f9fd880513822291dfd14de1617a6a86fd9b38a78da22334cb11b061d_prof);
+        $__internal_50d7df7519561f5d212db90ab091544c4d6d148508b71e9db3520a829b936c8e->leave($__internal_50d7df7519561f5d212db90ab091544c4d6d148508b71e9db3520a829b936c8e_prof);
 
     }
 
     // line 2
     public function block_content($context, array $blocks = array())
     {
-        $__internal_7e5605981e3bb5500fcd2a6441f6ad4dc26d9b860da4c94b1c7ab0a9a8570df1 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_7e5605981e3bb5500fcd2a6441f6ad4dc26d9b860da4c94b1c7ab0a9a8570df1->enter($__internal_7e5605981e3bb5500fcd2a6441f6ad4dc26d9b860da4c94b1c7ab0a9a8570df1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_13efab7d54639158e591f5ec985f293ea3cd7e1169e06200cb60282b8b9815c3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_13efab7d54639158e591f5ec985f293ea3cd7e1169e06200cb60282b8b9815c3->enter($__internal_13efab7d54639158e591f5ec985f293ea3cd7e1169e06200cb60282b8b9815c3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_8dc96f4d94c758c4dbe8a5a7d2e4844cd16e743d57207bb0c429eab68b005b7d = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_8dc96f4d94c758c4dbe8a5a7d2e4844cd16e743d57207bb0c429eab68b005b7d->enter($__internal_8dc96f4d94c758c4dbe8a5a7d2e4844cd16e743d57207bb0c429eab68b005b7d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_5b85dc904944faee16bd1c4da28d2f4d40c7c3cef5efb39013c3d228de4b70c1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5b85dc904944faee16bd1c4da28d2f4d40c7c3cef5efb39013c3d228de4b70c1->enter($__internal_5b85dc904944faee16bd1c4da28d2f4d40c7c3cef5efb39013c3d228de4b70c1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 3
         $this->displayParentBlock("content", $context, $blocks);
@@ -254,21 +254,21 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
 ";
         
-        $__internal_8dc96f4d94c758c4dbe8a5a7d2e4844cd16e743d57207bb0c429eab68b005b7d->leave($__internal_8dc96f4d94c758c4dbe8a5a7d2e4844cd16e743d57207bb0c429eab68b005b7d_prof);
+        $__internal_5b85dc904944faee16bd1c4da28d2f4d40c7c3cef5efb39013c3d228de4b70c1->leave($__internal_5b85dc904944faee16bd1c4da28d2f4d40c7c3cef5efb39013c3d228de4b70c1_prof);
 
         
-        $__internal_7e5605981e3bb5500fcd2a6441f6ad4dc26d9b860da4c94b1c7ab0a9a8570df1->leave($__internal_7e5605981e3bb5500fcd2a6441f6ad4dc26d9b860da4c94b1c7ab0a9a8570df1_prof);
+        $__internal_13efab7d54639158e591f5ec985f293ea3cd7e1169e06200cb60282b8b9815c3->leave($__internal_13efab7d54639158e591f5ec985f293ea3cd7e1169e06200cb60282b8b9815c3_prof);
 
     }
 
     // line 134
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_1d2eecdbddc03e44814ce6a1d31ae735f7202245f600a4c119b4ce7b0f8b2d69 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1d2eecdbddc03e44814ce6a1d31ae735f7202245f600a4c119b4ce7b0f8b2d69->enter($__internal_1d2eecdbddc03e44814ce6a1d31ae735f7202245f600a4c119b4ce7b0f8b2d69_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_6a4d0f570710c6c940bcf3358f7553ada6a16f941ecb01f03184ffd2fb7ab932 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_6a4d0f570710c6c940bcf3358f7553ada6a16f941ecb01f03184ffd2fb7ab932->enter($__internal_6a4d0f570710c6c940bcf3358f7553ada6a16f941ecb01f03184ffd2fb7ab932_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        $__internal_06c5281fcf33f6dd9a27ebf1c8d428ad63544c147ea3c759666f303294e97d6e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_06c5281fcf33f6dd9a27ebf1c8d428ad63544c147ea3c759666f303294e97d6e->enter($__internal_06c5281fcf33f6dd9a27ebf1c8d428ad63544c147ea3c759666f303294e97d6e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_1fb68ce33dbcbce841b2755d520203ec2411f01dea5d246b7be82abacf103360 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_1fb68ce33dbcbce841b2755d520203ec2411f01dea5d246b7be82abacf103360->enter($__internal_1fb68ce33dbcbce841b2755d520203ec2411f01dea5d246b7be82abacf103360_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 135
         $this->displayParentBlock("javascripts", $context, $blocks);
@@ -365,9 +365,28 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                     edytuj = \"\";
                     usun = \"\";
 
-                    console.log(data)
+                    console.log(data.asortyment)
+                    console.log(data.raport)
 
-                    \$('div#raport').html(data.raport);
+                    var data_raportu = data.raport['0']['Data'].substring(0, 11);
+
+                    var tabela_wynikowa =\"\";
+                    var naglowek_tabeli= \"<h2>Raport Procesu Suszenia</h2><table class='table table-hover'><thead><tr><th>Asortyment: \"+data.asortyment+\"</th><th>Data: \"+data_raportu+\"</th><th>Nr Suszarni: \"+data.raport['0']['NrSuszarni']+\"</th></tr></thead></table>\";
+
+                    tabela_wynikowa+=naglowek_tabeli;
+
+                    var wielkosci = '<div id=\"tabela_wielkosci\">Godzina<br / >Prędkość Blanszownika Hz<br / >Temp. Blanszownika &deg;C<br / >Siatka nr 7 Hz<br / >Siatka nr 6 Hz<br / >Siatka nr 5 Hz<br / >Siatka nr 4 Hz<br / >Siatka nr 3 Hz<br / >Siatka nr 2 Hz<br / >Siatka nr 1 Hz<br / >Temp. Góra &deg;C<br / >Temp. Dół &deg;C<br / >Wilgotność %<br / >Wykonawca Pomiaru<br / ></div>';
+
+                    tabela_wynikowa+=wielkosci;
+
+                    for (var i in data.raport) 
+                    {
+                    tabela_wynikowa +='<div id=\"tabela_wynikow\">'+data.raport[i].Godzina.substring(0,5)+'<br / >'+data.raport[i].PredkoscBlanszownika+'<br / >'+data.raport[i].TemperaturaBlanszownika+'<br / >'+data.raport[i].PredkoscSiatkiNr7+'<br / >'+data.raport[i].PredkoscSiatkiNr6+'<br / >'+data.raport[i].PredkoscSiatkiNr5+'<br / >'+data.raport[i].PredkoscSiatkiNr4+'<br / >'+data.raport[i].PredkoscSiatkiNr3+'<br / >'+data.raport[i].PredkoscSiatkiNr2+'<br / >'+data.raport[i].PredkoscSiatkiNr1+'<br / >'+data.raport[i].TemperaturaGora+'<br / >'+data.raport[i].TemperaturaDol+'<br / >'+data.raport[i].Wilgotnosc+'<br / ><span class=\"osoba\">'+data.raport[i].WykonawcaPomiaru+'</span></div>'
+                    }
+
+                    //Dane raportu
+                    \$('div#raport').html(tabela_wynikowa);
+                    //document.getElementById('raport').innerHTML = tabela_wynikowa;
             }
     });
 });
@@ -377,10 +396,10 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
 ";
         
-        $__internal_06c5281fcf33f6dd9a27ebf1c8d428ad63544c147ea3c759666f303294e97d6e->leave($__internal_06c5281fcf33f6dd9a27ebf1c8d428ad63544c147ea3c759666f303294e97d6e_prof);
+        $__internal_1fb68ce33dbcbce841b2755d520203ec2411f01dea5d246b7be82abacf103360->leave($__internal_1fb68ce33dbcbce841b2755d520203ec2411f01dea5d246b7be82abacf103360_prof);
 
         
-        $__internal_1d2eecdbddc03e44814ce6a1d31ae735f7202245f600a4c119b4ce7b0f8b2d69->leave($__internal_1d2eecdbddc03e44814ce6a1d31ae735f7202245f600a4c119b4ce7b0f8b2d69_prof);
+        $__internal_6a4d0f570710c6c940bcf3358f7553ada6a16f941ecb01f03184ffd2fb7ab932->leave($__internal_6a4d0f570710c6c940bcf3358f7553ada6a16f941ecb01f03184ffd2fb7ab932_prof);
 
     }
 
@@ -636,9 +655,28 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                     edytuj = \"\";
                     usun = \"\";
 
-                    console.log(data)
+                    console.log(data.asortyment)
+                    console.log(data.raport)
 
-                    \$('div#raport').html(data.raport);
+                    var data_raportu = data.raport['0']['Data'].substring(0, 11);
+
+                    var tabela_wynikowa =\"\";
+                    var naglowek_tabeli= \"<h2>Raport Procesu Suszenia</h2><table class='table table-hover'><thead><tr><th>Asortyment: \"+data.asortyment+\"</th><th>Data: \"+data_raportu+\"</th><th>Nr Suszarni: \"+data.raport['0']['NrSuszarni']+\"</th></tr></thead></table>\";
+
+                    tabela_wynikowa+=naglowek_tabeli;
+
+                    var wielkosci = '<div id=\"tabela_wielkosci\">Godzina<br / >Prędkość Blanszownika Hz<br / >Temp. Blanszownika &deg;C<br / >Siatka nr 7 Hz<br / >Siatka nr 6 Hz<br / >Siatka nr 5 Hz<br / >Siatka nr 4 Hz<br / >Siatka nr 3 Hz<br / >Siatka nr 2 Hz<br / >Siatka nr 1 Hz<br / >Temp. Góra &deg;C<br / >Temp. Dół &deg;C<br / >Wilgotność %<br / >Wykonawca Pomiaru<br / ></div>';
+
+                    tabela_wynikowa+=wielkosci;
+
+                    for (var i in data.raport) 
+                    {
+                    tabela_wynikowa +='<div id=\"tabela_wynikow\">'+data.raport[i].Godzina.substring(0,5)+'<br / >'+data.raport[i].PredkoscBlanszownika+'<br / >'+data.raport[i].TemperaturaBlanszownika+'<br / >'+data.raport[i].PredkoscSiatkiNr7+'<br / >'+data.raport[i].PredkoscSiatkiNr6+'<br / >'+data.raport[i].PredkoscSiatkiNr5+'<br / >'+data.raport[i].PredkoscSiatkiNr4+'<br / >'+data.raport[i].PredkoscSiatkiNr3+'<br / >'+data.raport[i].PredkoscSiatkiNr2+'<br / >'+data.raport[i].PredkoscSiatkiNr1+'<br / >'+data.raport[i].TemperaturaGora+'<br / >'+data.raport[i].TemperaturaDol+'<br / >'+data.raport[i].Wilgotnosc+'<br / ><span class=\"osoba\">'+data.raport[i].WykonawcaPomiaru+'</span></div>'
+                    }
+
+                    //Dane raportu
+                    \$('div#raport').html(tabela_wynikowa);
+                    //document.getElementById('raport').innerHTML = tabela_wynikowa;
             }
     });
 });

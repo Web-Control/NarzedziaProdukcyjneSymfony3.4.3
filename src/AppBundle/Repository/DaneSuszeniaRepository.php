@@ -3,6 +3,9 @@
 namespace AppBundle\Repository;
 use Doctrine\ORM\EntityRepository;
 
+$classLoader = new \Doctrine\Common\ClassLoader('DoctrineExtensions',__DIR__.'/../vendor/beberlei-doctrine-extensions');
+$classLoader->register();
+
 /**
  * DaneSuszeniaRepository
  *
@@ -12,20 +15,80 @@ use Doctrine\ORM\EntityRepository;
 class DaneSuszeniaRepository extends \Doctrine\ORM\EntityRepository
 {
 
-    public function raportSuszenia()
-    {
-
+    public function raportSuszenia($data_form,$nr_suszarni)
+    {   
+        $data = date_format($data_form, 'Y-m-d'); //Zamieniamy obiekt na string
+        $kolejny_dzien = date('Y-m-d', strtotime($data . ' +1 day'));
+        $godzina8='8:00:00';
+        $godzina6='6:00:00';
         $conn = $this->getEntityManager()->getConnection();
+
+        // $classLoader = new \Doctrine\Common\ClassLoader('DoctrineExtensions','\vendor\beberlei\DoctrineExtensions\src\Query\Mysql');
+        // $classLoader->register();
         
-        $sql = "SELECT * FROM dane_suszenia ";
+        $sql = "SELECT NrSuszarni,Data,Godzina,PredkoscBlanszownika,TemperaturaBlanszownika,PredkoscSiatkiNr7,PredkoscSiatkiNr6,PredkoscSiatkiNr5,PredkoscSiatkiNr4,PredkoscSiatkiNr3,PredkoscSiatkiNr2,PredkoscSiatkiNr1,CzasSuszenia,TemperaturaGora,TemperaturaDol,Wilgotnosc,WykonawcaPomiaru FROM dane_suszenia WHERE Data=:data AND Godzina >= :godzina8 AND NrSuszarni=:nr_suszarni
+        UNION ALL
+        SELECT NrSuszarni,Data,Godzina,PredkoscBlanszownika,TemperaturaBlanszownika,PredkoscSiatkiNr7,PredkoscSiatkiNr6,PredkoscSiatkiNr5,PredkoscSiatkiNr4,PredkoscSiatkiNr3,PredkoscSiatkiNr2,PredkoscSiatkiNr1,CzasSuszenia,TemperaturaGora,TemperaturaDol,Wilgotnosc,WykonawcaPomiaru FROM dane_suszenia WHERE Data=:kolejny_dzien AND Godzina <= :godzina6 AND NrSuszarni=:nr_suszarni ORDER BY Data,Godzina ASC ";
         $stmt = $conn->prepare($sql);
       //  $stmt->bindValue(1, $id);
-        $stmt->execute();
-        
-        return $stmt->fetchAll();
+        $stmt->execute(array('data' => $data, 'godzina8'=>$godzina8, 'kolejny_dzien' => $kolejny_dzien,'godzina6'=> $godzina6, 'nr_suszarni' => $nr_suszarni));
+       // $stmt->execute();
+        $wynik = $stmt->fetchAll();
+        dump($stmt->fetchAll());
+        return $wynik;
        // var_dump($stmt->fetchAll());die;
         //return json_encode($wynik);
 
+    }
+
+    public function raportSuszenia2($podana_data,$asortyment,$nr_suszarni)
+    {   
+        $data = date_format($podana_data, 'Y-m-d'); //Zamieniamy obiekt na string
+        $kolejny_dzien = date('Y-m-d', strtotime($data . ' +1 day'));
+        $godzina8='8:00:00';
+        $godzina6='6:00:00';
+
+        $qb = $this->createQueryBuilder('dane_suszenia')
+       // ->addOrderBy('dane_suszenia.data', 'ASC')
+        ->andWhere('dane_suszenia.data = :data')
+        ->setParameter('data', $data)
+        ->andWhere('dane_suszenia.godzina >= :godzina8')
+        ->setParameter('godzina8', $godzina8)
+        //->orWhere('dane_suszenia.data = :kolejnyDzien')
+        //->setParameter('kolejnyDzien',$kolejny_dzien)
+        // ->orWhere('dane_suszenia.godzina <= :godzina6')
+        // ->setParameter('godzina6', $godzina6)
+        ->andWhere('dane_suszenia.Asortyment = :asortyment')
+        ->setParameter('asortyment',$asortyment)
+        ->andWhere('dane_suszenia.nrSuszarni = :nrSuszarni')
+        ->setParameter('nrSuszarni',$nr_suszarni)
+        ->addOrderBy('dane_suszenia.data', 'ASC')
+        ->addOrderBy('dane_suszenia.godzina', 'ASC');
+        $query = $qb->getQuery();
+        dump($query->getDQL());
+
+        $qb2 = $this->createQueryBuilder('dane_suszenia')
+        // ->addOrderBy('dane_suszenia.data', 'ASC')
+         ->andWhere('dane_suszenia.data = :data')
+         ->setParameter('data', $kolejny_dzien)
+         ->andWhere('dane_suszenia.godzina <= :godzina6')
+         ->setParameter('godzina6', $godzina6)
+         ->andWhere('dane_suszenia.Asortyment = :asortyment')
+         ->setParameter('asortyment',$asortyment)
+         ->andWhere('dane_suszenia.nrSuszarni = :nrSuszarni')
+         ->setParameter('nrSuszarni',$nr_suszarni)
+         ->addOrderBy('dane_suszenia.data', 'ASC')
+         ->addOrderBy('dane_suszenia.godzina', 'ASC');
+         $query2 = $qb2->getQuery();
+         dump($query2->getDQL());
+
+         $wynik1 = $query->execute();
+         $wynik2 = $query2->execute();
+
+        $wynik = array_merge($wynik1+ $wynik2);
+
+        return $wynik;
+        
     }
     
 }

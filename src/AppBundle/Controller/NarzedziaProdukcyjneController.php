@@ -57,9 +57,16 @@ class NarzedziaProdukcyjneController extends Controller
         // only handles data on POST
         $form->handleRequest($request);
         //dump($form);
-        
+        $data = $form->get('data')->getData();
+
         if ($form->isSubmitted() && $form->isValid())
          {
+            $asortyment_z_form = $form->get('asortyment')->getData(); //Obiekt
+            $asortyment = $asortyment_z_form->getAsortyment();
+            $nr_suszarni = $form->get('nrSuszarni')->getData();
+            $wiadomosc="";
+            
+            dump($asortyment);
             $nowe_dane_suszenia = $form->getData(); //To jest obiekt
             $em = $this->getDoctrine()->getManager();
            // dump($nowe_dane_suszenia);
@@ -69,7 +76,7 @@ class NarzedziaProdukcyjneController extends Controller
            // dump($dane_istnieja);
 
              if ($form->getClickedButton() && 'zapisz' === $form->getClickedButton()->getName())
-                 {  $dziala = TRUE;
+                 {
 
                     if ($dane_istnieja)
                     {
@@ -81,8 +88,7 @@ class NarzedziaProdukcyjneController extends Controller
                          return new JsonResponse($info);
 
                         return $this->redirectToRoute('tworzenieRaportuSuszenia'); 
-                    }
-                        else
+                    } else
                     {
                         $em->persist($nowe_dane_suszenia);
                         $em->flush();
@@ -91,10 +97,8 @@ class NarzedziaProdukcyjneController extends Controller
 
                          //Ajax info
                         $wiadomosc = 'Zapisano dane';
-                        $info = ['info' => $wiadomosc];
-                        return new JsonResponse($info);
 
-                        return $this->redirectToRoute('tworzenieRaportuSuszenia');
+                       // return $this->redirectToRoute('tworzenieRaportuSuszenia');
                     }
                 }
 
@@ -118,7 +122,7 @@ class NarzedziaProdukcyjneController extends Controller
                     $dane_istnieja->setWykonawcaPomiaru($form->get('wykonawcaPomiaru')->getData());
                     
                     $em->flush();
-
+                    
                    //$this->addFlash('success', '<b>Sukces!!!</b> Edytowano dane do raportu. ');
                     
                    }
@@ -148,8 +152,7 @@ class NarzedziaProdukcyjneController extends Controller
 
                    //Ajax info
                    $wiadomosc = 'Dane usunieto';
-                   $info = ['info' => $wiadomosc];
-                   return new JsonResponse($info);
+                 
                    
                   }
                       else
@@ -166,19 +169,16 @@ class NarzedziaProdukcyjneController extends Controller
                   }
               }  
 
-                // $x = 'Działa';
-                
-                // $raport = ['output' => $x];
-                // return new JsonResponse($raport);
                 $dane_z_bazy = $this->getDoctrine()
-            ->getRepository('AppBundle:DaneSuszenia')
-            ->raportSuszenia();
-                dump($dane_z_bazy);
-                
-                 //$x = 'TAK';
-                 $info = ['raport' => $dane_z_bazy];
-                 return new JsonResponse($info);  
+                ->getRepository('AppBundle:DaneSuszenia')
+                ->raportSuszenia($data,$nr_suszarni);
+                //->raportSuszenia2($data,$asortyment,$nr_suszarni);
 
+                dump($dane_z_bazy);
+
+                 $info = ['raport' => $dane_z_bazy,'asortyment' => $asortyment,'info' => $wiadomosc];
+                 return new JsonResponse($info);  
+              
         }
       
 

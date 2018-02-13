@@ -101,6 +101,38 @@ body.fixed-nav {
     max-width: none;
     text-overflow: ellipsis; }
 
+form label
+{
+	font-weight:bold;
+}
+
+    #tabela_wielkosci {
+      width:180px;
+      display:inline-block;
+      margin:0 3px 10px 0;
+      /*border: 1px solid green;*/
+      font-size:13px;
+      font-weight:bold;
+    }
+    
+    #tabela_wynikow {
+      width:80px;
+      display:inline-block;
+      margin:0 2px 10px 0;
+      /*border: 1px solid green;*/
+      font-size:13px;
+    }
+
+    #tabela_wynikow:hover {
+      background-color: #dee2e6;
+    }
+    
+    .osoba {
+     font-size:0.8em;
+     color:black;
+    }
+
+
 @media (min-width: 992px) {
   #mainNav .navbar-brand {
     width: 250px; }

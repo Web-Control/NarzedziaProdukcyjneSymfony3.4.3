@@ -11,6 +11,7 @@ namespace PackageVersions;
 final class Versions
 {
     const VERSIONS = array (
+  'beberlei/DoctrineExtensions' => 'v1.0.21@b4dc688b5f7f9645920f4c81703e83a45cab09c2',
   'composer/ca-bundle' => '1.1.0@943b2c4fcad1ef178d16a713c2468bf7e579c288',
   'doctrine/annotations' => 'v1.2.7@f25c8aab83e0c3e976fd7d19875f198ccf2f7535',
   'doctrine/cache' => 'v1.6.2@eb152c5100571c7a45470ff2a35095ab3f3b900b',
@@ -57,7 +58,7 @@ final class Versions
   'zendframework/zend-eventmanager' => '3.2.0@9d72db10ceb6e42fb92350c0cb54460da61bd79c',
   'sensio/generator-bundle' => 'v3.1.7@28cbaa244bd0816fd8908b93f90380bcd7b67a65',
   'symfony/phpunit-bridge' => 'v3.4.3@24ffb71a115c25f5ee56cbfd38e56ed2cdbeb0a9',
-  'psnma/narzedziaprodukcyjne' => 'No version set (parsed as 1.0.0)@',
+  'psnma/narzedziaprodukcyjne' => 'dev-master@7545c3d1e6edd6b2073b397df49a503651b0d735',
 );
 
     private function __construct()

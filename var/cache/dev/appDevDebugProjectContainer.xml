@@ -4378,6 +4378,10 @@
       <call method="setRepositoryFactory">
         <argument type="service" id="doctrine.orm.container_repository_factory"/>
       </call>
+      <call method="addCustomStringFunction">
+        <argument>str_to_date</argument>
+        <argument>DoctrineExtensions\Query\Mysql\StrToDate</argument>
+      </call>
     </service>
     <service id="doctrine.orm.default_annotation_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
       <argument type="service" id="annotations.cached_reader"/>

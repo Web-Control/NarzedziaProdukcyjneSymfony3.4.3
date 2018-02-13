@@ -225,10 +225,28 @@
                     edytuj = "";
                     usun = "";
 
-                    console.log(data)
+                    console.log(data.asortyment)
+                    console.log(data.raport)
+
+                    var data_raportu = data.raport['0']['Data'].substring(0, 11);
+
+                    var tabela_wynikowa ="";
+                    var naglowek_tabeli= "<h2>Raport Procesu Suszenia</h2><table class='table table-hover'><thead><tr><th>Asortyment: "+data.asortyment+"</th><th>Data: "+data_raportu+"</th><th>Nr Suszarni: "+data.raport['0']['NrSuszarni']+"</th></tr></thead></table>";
+
+                    tabela_wynikowa+=naglowek_tabeli;
+
+                    var wielkosci = '<div id="tabela_wielkosci">Godzina<br / >Prędkość Blanszownika Hz<br / >Temp. Blanszownika &deg;C<br / >Siatka nr 7 Hz<br / >Siatka nr 6 Hz<br / >Siatka nr 5 Hz<br / >Siatka nr 4 Hz<br / >Siatka nr 3 Hz<br / >Siatka nr 2 Hz<br / >Siatka nr 1 Hz<br / >Temp. Góra &deg;C<br / >Temp. Dół &deg;C<br / >Wilgotność %<br / >Wykonawca Pomiaru<br / ></div>';
+
+                    tabela_wynikowa+=wielkosci;
+
+                    for (var i in data.raport) 
+                    {
+                    tabela_wynikowa +='<div id="tabela_wynikow">'+data.raport[i].Godzina.substring(0,5)+'<br / >'+data.raport[i].PredkoscBlanszownika+'<br / >'+data.raport[i].TemperaturaBlanszownika+'<br / >'+data.raport[i].PredkoscSiatkiNr7+'<br / >'+data.raport[i].PredkoscSiatkiNr6+'<br / >'+data.raport[i].PredkoscSiatkiNr5+'<br / >'+data.raport[i].PredkoscSiatkiNr4+'<br / >'+data.raport[i].PredkoscSiatkiNr3+'<br / >'+data.raport[i].PredkoscSiatkiNr2+'<br / >'+data.raport[i].PredkoscSiatkiNr1+'<br / >'+data.raport[i].TemperaturaGora+'<br / >'+data.raport[i].TemperaturaDol+'<br / >'+data.raport[i].Wilgotnosc+'<br / ><span class="osoba">'+data.raport[i].WykonawcaPomiaru+'</span></div>'
+                    }
 
                     //Dane raportu
-                    $('div#raport').html(data.raport);
+                    $('div#raport').html(tabela_wynikowa);
+                    //document.getElementById('raport').innerHTML = tabela_wynikowa;
             }
     });
 });
