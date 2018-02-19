@@ -3,12 +3,14 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * DaneSuszenia
  *
  * @ORM\Table(name="dane_suszenia")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\DaneSuszeniaRepository")
+ * 
  */
 class DaneSuszenia
 {
@@ -54,6 +56,12 @@ class DaneSuszenia
      * @var int
      *
      * @ORM\Column(name="PredkoscBlanszownika", type="integer")
+     * 
+     * @Assert\Range(
+     *      min = "0",
+     *      max = "120"
+     * )
+     * 
      */
     private $predkoscBlanszownika;
 
@@ -61,6 +69,12 @@ class DaneSuszenia
      * @var int
      *
      * @ORM\Column(name="TemperaturaBlanszownika", type="integer")
+     * 
+     *   @Assert\Range(
+     *      min = "0",
+     *      max = "120"
+     * )
+     * 
      */
     private $temperaturaBlanszownika;
 
@@ -68,6 +82,13 @@ class DaneSuszenia
      * @var int
      *
      * @ORM\Column(name="PredkoscSiatkiNr7", type="integer")
+     * 
+     *  
+     * @Assert\Range(
+     *      min = "0",
+     *      max = "120"
+     * )
+     * 
      */
     private $predkoscSiatkiNr7;
 
@@ -75,6 +96,12 @@ class DaneSuszenia
      * @var int
      *
      * @ORM\Column(name="PredkoscSiatkiNr6", type="integer")
+     * 
+     * @Assert\Range(
+     *      min = "0",
+     *      max = "120"
+     * )
+     * 
      */
     private $predkoscSiatkiNr6;
 
@@ -82,6 +109,12 @@ class DaneSuszenia
      * @var int
      *
      * @ORM\Column(name="PredkoscSiatkiNr5", type="integer")
+     * 
+     * @Assert\Range(
+     *      min = "0",
+     *      max = "120"
+     * )
+     * 
      */
     private $predkoscSiatkiNr5;
 
@@ -89,6 +122,12 @@ class DaneSuszenia
      * @var int
      *
      * @ORM\Column(name="PredkoscSiatkiNr4", type="integer")
+     * 
+     * @Assert\Range(
+     *      min = "0",
+     *      max = "120"
+     * )
+     * 
      */
     private $predkoscSiatkiNr4;
 
@@ -96,6 +135,12 @@ class DaneSuszenia
      * @var int
      *
      * @ORM\Column(name="PredkoscSiatkiNr3", type="integer")
+     * 
+     * @Assert\Range(
+     *      min = "0",
+     *      max = "120"
+     * )
+     * 
      */
     private $predkoscSiatkiNr3;
 
@@ -103,6 +148,12 @@ class DaneSuszenia
      * @var int
      *
      * @ORM\Column(name="PredkoscSiatkiNr2", type="integer")
+     * 
+     * @Assert\Range(
+     *      min = "0",
+     *      max = "120"
+     * )
+     * 
      */
     private $predkoscSiatkiNr2;
 
@@ -110,6 +161,12 @@ class DaneSuszenia
      * @var int
      *
      * @ORM\Column(name="PredkoscSiatkiNr1", type="integer")
+     * 
+     * @Assert\Range(
+     *      min = "0",
+     *      max = "120"
+     * )
+     * 
      */
     private $predkoscSiatkiNr1;
 
@@ -117,6 +174,12 @@ class DaneSuszenia
      * @var int
      *
      * @ORM\Column(name="TemperaturaGora", type="integer")
+     * 
+     * @Assert\Range(
+     *      min = "0",
+     *      max = "120"
+     * )
+     * 
      */
     private $temperaturaGora;
 
@@ -124,6 +187,12 @@ class DaneSuszenia
      * @var int
      *
      * @ORM\Column(name="TemperaturaDol", type="integer")
+     * 
+     * @Assert\Range(
+     *      min = "0",
+     *      max = "120"
+     * )
+     * 
      */
     private $temperaturaDol;
 
@@ -138,6 +207,12 @@ class DaneSuszenia
      * @var string
      *
      * @ORM\Column(name="Wilgotnosc", type="decimal", precision=5, scale=2)
+     * 
+     * @Assert\Range(
+     *      min = "0",
+     *      max = "20"
+     * )
+     * 
      */
     private $wilgotnosc;
 
@@ -930,6 +1005,11 @@ class DaneSuszenia
     public function getOpisZdjecia()
     {
         return $this->opisZdjecia;
+    }
+
+    public function __toString()
+    {
+        return $this->getGodzina();
     }
 }
 

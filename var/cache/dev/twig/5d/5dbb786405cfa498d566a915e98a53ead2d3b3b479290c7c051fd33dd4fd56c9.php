@@ -22,29 +22,29 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_0dd3f0558b71811e778e53b262f1dc86bab1fb746d6ece8bfa41d8ad961617de = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_0dd3f0558b71811e778e53b262f1dc86bab1fb746d6ece8bfa41d8ad961617de->enter($__internal_0dd3f0558b71811e778e53b262f1dc86bab1fb746d6ece8bfa41d8ad961617de_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
+        $__internal_c359bf7b1b46b27aa75b075714bb4d27e8c65a1ecef0a0eb7aa3caf2c43e5558 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c359bf7b1b46b27aa75b075714bb4d27e8c65a1ecef0a0eb7aa3caf2c43e5558->enter($__internal_c359bf7b1b46b27aa75b075714bb4d27e8c65a1ecef0a0eb7aa3caf2c43e5558_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
 
-        $__internal_50d7df7519561f5d212db90ab091544c4d6d148508b71e9db3520a829b936c8e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_50d7df7519561f5d212db90ab091544c4d6d148508b71e9db3520a829b936c8e->enter($__internal_50d7df7519561f5d212db90ab091544c4d6d148508b71e9db3520a829b936c8e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
+        $__internal_0645dd5ed3060ef1732470cd2c228e041c11ed662a6ba61b8dafe37fac4727bd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_0645dd5ed3060ef1732470cd2c228e041c11ed662a6ba61b8dafe37fac4727bd->enter($__internal_0645dd5ed3060ef1732470cd2c228e041c11ed662a6ba61b8dafe37fac4727bd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_0dd3f0558b71811e778e53b262f1dc86bab1fb746d6ece8bfa41d8ad961617de->leave($__internal_0dd3f0558b71811e778e53b262f1dc86bab1fb746d6ece8bfa41d8ad961617de_prof);
+        $__internal_c359bf7b1b46b27aa75b075714bb4d27e8c65a1ecef0a0eb7aa3caf2c43e5558->leave($__internal_c359bf7b1b46b27aa75b075714bb4d27e8c65a1ecef0a0eb7aa3caf2c43e5558_prof);
 
         
-        $__internal_50d7df7519561f5d212db90ab091544c4d6d148508b71e9db3520a829b936c8e->leave($__internal_50d7df7519561f5d212db90ab091544c4d6d148508b71e9db3520a829b936c8e_prof);
+        $__internal_0645dd5ed3060ef1732470cd2c228e041c11ed662a6ba61b8dafe37fac4727bd->leave($__internal_0645dd5ed3060ef1732470cd2c228e041c11ed662a6ba61b8dafe37fac4727bd_prof);
 
     }
 
     // line 2
     public function block_content($context, array $blocks = array())
     {
-        $__internal_13efab7d54639158e591f5ec985f293ea3cd7e1169e06200cb60282b8b9815c3 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_13efab7d54639158e591f5ec985f293ea3cd7e1169e06200cb60282b8b9815c3->enter($__internal_13efab7d54639158e591f5ec985f293ea3cd7e1169e06200cb60282b8b9815c3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_73ea63c278aeab2f2b14a42f25377c6b1674431cbe63494c728e6380baf4bb1a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_73ea63c278aeab2f2b14a42f25377c6b1674431cbe63494c728e6380baf4bb1a->enter($__internal_73ea63c278aeab2f2b14a42f25377c6b1674431cbe63494c728e6380baf4bb1a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_5b85dc904944faee16bd1c4da28d2f4d40c7c3cef5efb39013c3d228de4b70c1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_5b85dc904944faee16bd1c4da28d2f4d40c7c3cef5efb39013c3d228de4b70c1->enter($__internal_5b85dc904944faee16bd1c4da28d2f4d40c7c3cef5efb39013c3d228de4b70c1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_f5036c44d13dbbc7b1c45789d5b1b56d760089d2e46a2b8001dfe2d12b83ab0e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f5036c44d13dbbc7b1c45789d5b1b56d760089d2e46a2b8001dfe2d12b83ab0e->enter($__internal_f5036c44d13dbbc7b1c45789d5b1b56d760089d2e46a2b8001dfe2d12b83ab0e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 3
         $this->displayParentBlock("content", $context, $blocks);
@@ -113,13 +113,13 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                     <div class=\"col-sm-4\">
                         ";
         // line 43
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "predkoscBlanszownika", array()), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "predkoscBlanszownika", array()), 'row', array("attr" => array("max" => "120")));
         echo "
                     </div>
                      <div class=\"col-sm-4\">
                         ";
         // line 46
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "temperaturaBlanszownika", array()), 'row');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "temperaturaBlanszownika", array()), 'row', array("attr" => array("max" => "120")));
         echo "
                     </div>
                 </div>
@@ -254,26 +254,25 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
 ";
         
-        $__internal_5b85dc904944faee16bd1c4da28d2f4d40c7c3cef5efb39013c3d228de4b70c1->leave($__internal_5b85dc904944faee16bd1c4da28d2f4d40c7c3cef5efb39013c3d228de4b70c1_prof);
+        $__internal_f5036c44d13dbbc7b1c45789d5b1b56d760089d2e46a2b8001dfe2d12b83ab0e->leave($__internal_f5036c44d13dbbc7b1c45789d5b1b56d760089d2e46a2b8001dfe2d12b83ab0e_prof);
 
         
-        $__internal_13efab7d54639158e591f5ec985f293ea3cd7e1169e06200cb60282b8b9815c3->leave($__internal_13efab7d54639158e591f5ec985f293ea3cd7e1169e06200cb60282b8b9815c3_prof);
+        $__internal_73ea63c278aeab2f2b14a42f25377c6b1674431cbe63494c728e6380baf4bb1a->leave($__internal_73ea63c278aeab2f2b14a42f25377c6b1674431cbe63494c728e6380baf4bb1a_prof);
 
     }
 
     // line 134
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_6a4d0f570710c6c940bcf3358f7553ada6a16f941ecb01f03184ffd2fb7ab932 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_6a4d0f570710c6c940bcf3358f7553ada6a16f941ecb01f03184ffd2fb7ab932->enter($__internal_6a4d0f570710c6c940bcf3358f7553ada6a16f941ecb01f03184ffd2fb7ab932_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_caa5815d494c57879375d0c07c9762677ea9aafe5f2f3aa4b2deeb63d719949b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_caa5815d494c57879375d0c07c9762677ea9aafe5f2f3aa4b2deeb63d719949b->enter($__internal_caa5815d494c57879375d0c07c9762677ea9aafe5f2f3aa4b2deeb63d719949b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        $__internal_1fb68ce33dbcbce841b2755d520203ec2411f01dea5d246b7be82abacf103360 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1fb68ce33dbcbce841b2755d520203ec2411f01dea5d246b7be82abacf103360->enter($__internal_1fb68ce33dbcbce841b2755d520203ec2411f01dea5d246b7be82abacf103360_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_d442b4d1a89dcdc8e53b6d378c0588e3186fa88f7d305dce85f745485ababf57 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_d442b4d1a89dcdc8e53b6d378c0588e3186fa88f7d305dce85f745485ababf57->enter($__internal_d442b4d1a89dcdc8e53b6d378c0588e3186fa88f7d305dce85f745485ababf57_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
         // line 135
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
-
 
 <script>
 
@@ -319,11 +318,38 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
         type: \"POST\",
         data: serializedData,
         async: true,
+            beforeSend:function(data)
+            {
+                 var formularz = \$(\"form\").serializeArray();
+                 console.log(formularz)
+                     \$.each(formularz, function(i, field)
+                     {
+                       // \$(\"#results\").append(field.name + \":\" + field.value + \" \");
+                        if(formularz[i].value == \"\")
+                        {
+                           var dlugosc = formularz[i].name.length-1;
+
+                          jQuery('#info').html('<div class=\"alert alert-warning alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Wypełnij puste pole: <b>'+formularz[i].name.substring(33,dlugosc)+'</b>.</div>')
+
+                          xhr.abort();   
+                        }
+                    }
+                    );
+            },
+            error: function (data)
+            {
+                 jQuery('#bledy').html('<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Wymiana danych z serwerem nie powiodła się. Błąd połączenia AJAX. Zgłoś problemy z aplikacją do jej administratora. </div>') 
+            },
             success: function (data)
              {
                     
                 if (zapisz) 
                 {   
+                      if (data.info == \"Zle dane\")
+                    {
+                       jQuery('#info').html('<div class=\"alert alert-warning alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Wprowadziłeś złe dane do raportu! Maksymalne wartości temperatur i prędkości siatek to 120Hz. Maksymalna wilgotność to 20%.</div>') 
+                    }
+
                      if (data.info == \"Dane istnieja\")
                     {
                        jQuery('#info').html('<div class=\"alert alert-warning alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Dane raportu z podanego dnia i godziny już istnieją.</div>') 
@@ -337,18 +363,30 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
                  if (edytuj) 
                 {    
+                    if (data.info == \"Zle dane\")
+                    {
+                       jQuery('#info').html('<div class=\"alert alert-warning alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Wprowadziłeś złe dane do raportu! Maksymalne wartości temperatur i prędkości siatek to 120Hz. Maksymalna wilgotność to 20%.</div>') 
+                    }
+
                     if (data.info == \"Dane nie istnieja\")
                     {
                        jQuery('#info').html('<div class=\"alert alert-warning alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Dane raportu z podanego dnia i godziny nie istnieją.</div>') 
-                    } else
-                        {
+                    } 
+
+                    if(data.info == \"Dane zostaly edytowane\")
+                    {
                         jQuery('#info').html('<div class=\"alert alert-success alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Sukces!!!</b>&nbsp Wybrane dane zostały edytowane.</div>')
-                        }
+                    }
 
                 }
 
                  if (usun) 
                  { 
+                    if (data.info == \"Zle dane\")
+                    {
+                       jQuery('#info').html('<div class=\"alert alert-warning alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Wprowadziłeś złe dane do raportu! Maksymalne wartości temperatur i prędkości siatek to 120Hz. Maksymalna wilgotność to 20%.</div>') 
+                    }
+
                       if (data.info == \"Dane usunieto\")
                     {
                         jQuery('#info').html('<div class=\"alert alert-success alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Sukces!!!</b>&nbsp Wybrane dane zostały usunięte.</div>')
@@ -367,6 +405,7 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
                     console.log(data.asortyment)
                     console.log(data.raport)
+                     console.log(data.info)
 
                     var data_raportu = data.raport['0']['Data'].substring(0, 11);
 
@@ -375,13 +414,13 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
                     tabela_wynikowa+=naglowek_tabeli;
 
-                    var wielkosci = '<div id=\"tabela_wielkosci\">Godzina<br / >Prędkość Blanszownika Hz<br / >Temp. Blanszownika &deg;C<br / >Siatka nr 7 Hz<br / >Siatka nr 6 Hz<br / >Siatka nr 5 Hz<br / >Siatka nr 4 Hz<br / >Siatka nr 3 Hz<br / >Siatka nr 2 Hz<br / >Siatka nr 1 Hz<br / >Temp. Góra &deg;C<br / >Temp. Dół &deg;C<br / >Wilgotność %<br / >Wykonawca Pomiaru<br / ></div>';
+                    var wielkosci = '<div id=\"tabela_wielkosci\">Godzina<br / >Prędkość Blanszownika Hz<br / >Temp. Blanszownika &deg;C<br / ><span id=\"wiersz\">Siatka nr 7 Hz</span><br / >Siatka nr 6 Hz<br / >Siatka nr 5 Hz<br / >Siatka nr 4 Hz<br / >Siatka nr 3 Hz<br / >Siatka nr 2 Hz<br / >Siatka nr 1 Hz<br / >Temp. Góra &deg;C<br / >Temp. Dół &deg;C<br / >Wilgotność %<br / >Wykonawca Pomiaru<br / ></div>';
 
                     tabela_wynikowa+=wielkosci;
 
                     for (var i in data.raport) 
                     {
-                    tabela_wynikowa +='<div id=\"tabela_wynikow\">'+data.raport[i].Godzina.substring(0,5)+'<br / >'+data.raport[i].PredkoscBlanszownika+'<br / >'+data.raport[i].TemperaturaBlanszownika+'<br / >'+data.raport[i].PredkoscSiatkiNr7+'<br / >'+data.raport[i].PredkoscSiatkiNr6+'<br / >'+data.raport[i].PredkoscSiatkiNr5+'<br / >'+data.raport[i].PredkoscSiatkiNr4+'<br / >'+data.raport[i].PredkoscSiatkiNr3+'<br / >'+data.raport[i].PredkoscSiatkiNr2+'<br / >'+data.raport[i].PredkoscSiatkiNr1+'<br / >'+data.raport[i].TemperaturaGora+'<br / >'+data.raport[i].TemperaturaDol+'<br / >'+data.raport[i].Wilgotnosc+'<br / ><span class=\"osoba\">'+data.raport[i].WykonawcaPomiaru+'</span></div>'
+                    tabela_wynikowa +='<div id=\"tabela_wynikow\">'+data.raport[i].Godzina.substring(0,5)+'<br / >'+data.raport[i].PredkoscBlanszownika+' Hz<br / >'+data.raport[i].TemperaturaBlanszownika+' &deg;C<br / ><span id=\"wiersz\">'+data.raport[i].PredkoscSiatkiNr7+' Hz</span><br / >'+data.raport[i].PredkoscSiatkiNr6+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr5+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr4+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr3+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr2+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr1+' Hz<br / >'+data.raport[i].TemperaturaGora+' &deg;C<br / >'+data.raport[i].TemperaturaDol+' &deg;C<br / >'+data.raport[i].Wilgotnosc+' %<br / ><span class=\"osoba\">'+data.raport[i].WykonawcaPomiaru+'</span></div>'
                     }
 
                     //Dane raportu
@@ -390,16 +429,15 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
             }
     });
 });
-
 </script>
 
 
 ";
         
-        $__internal_1fb68ce33dbcbce841b2755d520203ec2411f01dea5d246b7be82abacf103360->leave($__internal_1fb68ce33dbcbce841b2755d520203ec2411f01dea5d246b7be82abacf103360_prof);
+        $__internal_d442b4d1a89dcdc8e53b6d378c0588e3186fa88f7d305dce85f745485ababf57->leave($__internal_d442b4d1a89dcdc8e53b6d378c0588e3186fa88f7d305dce85f745485ababf57_prof);
 
         
-        $__internal_6a4d0f570710c6c940bcf3358f7553ada6a16f941ecb01f03184ffd2fb7ab932->leave($__internal_6a4d0f570710c6c940bcf3358f7553ada6a16f941ecb01f03184ffd2fb7ab932_prof);
+        $__internal_caa5815d494c57879375d0c07c9762677ea9aafe5f2f3aa4b2deeb63d719949b->leave($__internal_caa5815d494c57879375d0c07c9762677ea9aafe5f2f3aa4b2deeb63d719949b_prof);
 
     }
 
@@ -470,10 +508,10 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
                  <div class=\"row\">
                     <div class=\"col-sm-4\">
-                        {{ form_row(dodajDaneSuszeniaForm.predkoscBlanszownika) }}
+                        {{ form_row(dodajDaneSuszeniaForm.predkoscBlanszownika,{'attr': {'max': '120'}}) }}
                     </div>
                      <div class=\"col-sm-4\">
-                        {{ form_row(dodajDaneSuszeniaForm.temperaturaBlanszownika) }}
+                        {{ form_row(dodajDaneSuszeniaForm.temperaturaBlanszownika,{'attr': {'max': '120'}}) }}
                     </div>
                 </div>
                 <hr>
@@ -564,7 +602,6 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 {% block javascripts %}
 {{ parent() }}
 
-
 <script>
 
     //Akcja do wykonania
@@ -609,11 +646,38 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
         type: \"POST\",
         data: serializedData,
         async: true,
+            beforeSend:function(data)
+            {
+                 var formularz = \$(\"form\").serializeArray();
+                 console.log(formularz)
+                     \$.each(formularz, function(i, field)
+                     {
+                       // \$(\"#results\").append(field.name + \":\" + field.value + \" \");
+                        if(formularz[i].value == \"\")
+                        {
+                           var dlugosc = formularz[i].name.length-1;
+
+                          jQuery('#info').html('<div class=\"alert alert-warning alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Wypełnij puste pole: <b>'+formularz[i].name.substring(33,dlugosc)+'</b>.</div>')
+
+                          xhr.abort();   
+                        }
+                    }
+                    );
+            },
+            error: function (data)
+            {
+                 jQuery('#bledy').html('<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Wymiana danych z serwerem nie powiodła się. Błąd połączenia AJAX. Zgłoś problemy z aplikacją do jej administratora. </div>') 
+            },
             success: function (data)
              {
                     
                 if (zapisz) 
                 {   
+                      if (data.info == \"Zle dane\")
+                    {
+                       jQuery('#info').html('<div class=\"alert alert-warning alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Wprowadziłeś złe dane do raportu! Maksymalne wartości temperatur i prędkości siatek to 120Hz. Maksymalna wilgotność to 20%.</div>') 
+                    }
+
                      if (data.info == \"Dane istnieja\")
                     {
                        jQuery('#info').html('<div class=\"alert alert-warning alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Dane raportu z podanego dnia i godziny już istnieją.</div>') 
@@ -627,18 +691,30 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
                  if (edytuj) 
                 {    
+                    if (data.info == \"Zle dane\")
+                    {
+                       jQuery('#info').html('<div class=\"alert alert-warning alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Wprowadziłeś złe dane do raportu! Maksymalne wartości temperatur i prędkości siatek to 120Hz. Maksymalna wilgotność to 20%.</div>') 
+                    }
+
                     if (data.info == \"Dane nie istnieja\")
                     {
                        jQuery('#info').html('<div class=\"alert alert-warning alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Dane raportu z podanego dnia i godziny nie istnieją.</div>') 
-                    } else
-                        {
+                    } 
+
+                    if(data.info == \"Dane zostaly edytowane\")
+                    {
                         jQuery('#info').html('<div class=\"alert alert-success alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Sukces!!!</b>&nbsp Wybrane dane zostały edytowane.</div>')
-                        }
+                    }
 
                 }
 
                  if (usun) 
                  { 
+                    if (data.info == \"Zle dane\")
+                    {
+                       jQuery('#info').html('<div class=\"alert alert-warning alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Wprowadziłeś złe dane do raportu! Maksymalne wartości temperatur i prędkości siatek to 120Hz. Maksymalna wilgotność to 20%.</div>') 
+                    }
+
                       if (data.info == \"Dane usunieto\")
                     {
                         jQuery('#info').html('<div class=\"alert alert-success alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Sukces!!!</b>&nbsp Wybrane dane zostały usunięte.</div>')
@@ -657,6 +733,7 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
                     console.log(data.asortyment)
                     console.log(data.raport)
+                     console.log(data.info)
 
                     var data_raportu = data.raport['0']['Data'].substring(0, 11);
 
@@ -665,13 +742,13 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
                     tabela_wynikowa+=naglowek_tabeli;
 
-                    var wielkosci = '<div id=\"tabela_wielkosci\">Godzina<br / >Prędkość Blanszownika Hz<br / >Temp. Blanszownika &deg;C<br / >Siatka nr 7 Hz<br / >Siatka nr 6 Hz<br / >Siatka nr 5 Hz<br / >Siatka nr 4 Hz<br / >Siatka nr 3 Hz<br / >Siatka nr 2 Hz<br / >Siatka nr 1 Hz<br / >Temp. Góra &deg;C<br / >Temp. Dół &deg;C<br / >Wilgotność %<br / >Wykonawca Pomiaru<br / ></div>';
+                    var wielkosci = '<div id=\"tabela_wielkosci\">Godzina<br / >Prędkość Blanszownika Hz<br / >Temp. Blanszownika &deg;C<br / ><span id=\"wiersz\">Siatka nr 7 Hz</span><br / >Siatka nr 6 Hz<br / >Siatka nr 5 Hz<br / >Siatka nr 4 Hz<br / >Siatka nr 3 Hz<br / >Siatka nr 2 Hz<br / >Siatka nr 1 Hz<br / >Temp. Góra &deg;C<br / >Temp. Dół &deg;C<br / >Wilgotność %<br / >Wykonawca Pomiaru<br / ></div>';
 
                     tabela_wynikowa+=wielkosci;
 
                     for (var i in data.raport) 
                     {
-                    tabela_wynikowa +='<div id=\"tabela_wynikow\">'+data.raport[i].Godzina.substring(0,5)+'<br / >'+data.raport[i].PredkoscBlanszownika+'<br / >'+data.raport[i].TemperaturaBlanszownika+'<br / >'+data.raport[i].PredkoscSiatkiNr7+'<br / >'+data.raport[i].PredkoscSiatkiNr6+'<br / >'+data.raport[i].PredkoscSiatkiNr5+'<br / >'+data.raport[i].PredkoscSiatkiNr4+'<br / >'+data.raport[i].PredkoscSiatkiNr3+'<br / >'+data.raport[i].PredkoscSiatkiNr2+'<br / >'+data.raport[i].PredkoscSiatkiNr1+'<br / >'+data.raport[i].TemperaturaGora+'<br / >'+data.raport[i].TemperaturaDol+'<br / >'+data.raport[i].Wilgotnosc+'<br / ><span class=\"osoba\">'+data.raport[i].WykonawcaPomiaru+'</span></div>'
+                    tabela_wynikowa +='<div id=\"tabela_wynikow\">'+data.raport[i].Godzina.substring(0,5)+'<br / >'+data.raport[i].PredkoscBlanszownika+' Hz<br / >'+data.raport[i].TemperaturaBlanszownika+' &deg;C<br / ><span id=\"wiersz\">'+data.raport[i].PredkoscSiatkiNr7+' Hz</span><br / >'+data.raport[i].PredkoscSiatkiNr6+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr5+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr4+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr3+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr2+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr1+' Hz<br / >'+data.raport[i].TemperaturaGora+' &deg;C<br / >'+data.raport[i].TemperaturaDol+' &deg;C<br / >'+data.raport[i].Wilgotnosc+' %<br / ><span class=\"osoba\">'+data.raport[i].WykonawcaPomiaru+'</span></div>'
                     }
 
                     //Dane raportu
@@ -680,7 +757,6 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
             }
     });
 });
-
 </script>
 
 

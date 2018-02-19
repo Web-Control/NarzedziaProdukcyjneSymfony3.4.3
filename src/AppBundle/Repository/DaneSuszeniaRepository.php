@@ -15,23 +15,22 @@ $classLoader->register();
 class DaneSuszeniaRepository extends \Doctrine\ORM\EntityRepository
 {
 
-    public function raportSuszenia($data_form,$nr_suszarni)
+    public function raportSuszenia($asortyment_id,$data_form,$nr_suszarni)
     {   
-        $data = date_format($data_form, 'Y-m-d'); //Zamieniamy obiekt na string
+       // $data = date_format($data_form, 'Y-m-d'); //Zamieniamy obiekt na string
+        $data=$data_form;
         $kolejny_dzien = date('Y-m-d', strtotime($data . ' +1 day'));
         $godzina8='8:00:00';
         $godzina6='6:00:00';
-        $conn = $this->getEntityManager()->getConnection();
 
-        // $classLoader = new \Doctrine\Common\ClassLoader('DoctrineExtensions','\vendor\beberlei\DoctrineExtensions\src\Query\Mysql');
-        // $classLoader->register();
+        $conn = $this->getEntityManager()->getConnection();
         
-        $sql = "SELECT NrSuszarni,Data,Godzina,PredkoscBlanszownika,TemperaturaBlanszownika,PredkoscSiatkiNr7,PredkoscSiatkiNr6,PredkoscSiatkiNr5,PredkoscSiatkiNr4,PredkoscSiatkiNr3,PredkoscSiatkiNr2,PredkoscSiatkiNr1,CzasSuszenia,TemperaturaGora,TemperaturaDol,Wilgotnosc,WykonawcaPomiaru FROM dane_suszenia WHERE Data=:data AND Godzina >= :godzina8 AND NrSuszarni=:nr_suszarni
+        $sql = "SELECT NrSuszarni,Data,Godzina,PredkoscBlanszownika,TemperaturaBlanszownika,PredkoscSiatkiNr7,PredkoscSiatkiNr6,PredkoscSiatkiNr5,PredkoscSiatkiNr4,PredkoscSiatkiNr3,PredkoscSiatkiNr2,PredkoscSiatkiNr1,CzasSuszenia,TemperaturaGora,TemperaturaDol,Wilgotnosc,WykonawcaPomiaru FROM dane_suszenia WHERE asortyment_id=:asortyment AND Data=:data AND Godzina >= :godzina8 AND NrSuszarni=:nr_suszarni
         UNION ALL
-        SELECT NrSuszarni,Data,Godzina,PredkoscBlanszownika,TemperaturaBlanszownika,PredkoscSiatkiNr7,PredkoscSiatkiNr6,PredkoscSiatkiNr5,PredkoscSiatkiNr4,PredkoscSiatkiNr3,PredkoscSiatkiNr2,PredkoscSiatkiNr1,CzasSuszenia,TemperaturaGora,TemperaturaDol,Wilgotnosc,WykonawcaPomiaru FROM dane_suszenia WHERE Data=:kolejny_dzien AND Godzina <= :godzina6 AND NrSuszarni=:nr_suszarni ORDER BY Data,Godzina ASC ";
+        SELECT NrSuszarni,Data,Godzina,PredkoscBlanszownika,TemperaturaBlanszownika,PredkoscSiatkiNr7,PredkoscSiatkiNr6,PredkoscSiatkiNr5,PredkoscSiatkiNr4,PredkoscSiatkiNr3,PredkoscSiatkiNr2,PredkoscSiatkiNr1,CzasSuszenia,TemperaturaGora,TemperaturaDol,Wilgotnosc,WykonawcaPomiaru FROM dane_suszenia WHERE asortyment_id=:asortyment AND Data=:kolejny_dzien AND Godzina <= :godzina6 AND NrSuszarni=:nr_suszarni ORDER BY Data,Godzina ASC ";
         $stmt = $conn->prepare($sql);
       //  $stmt->bindValue(1, $id);
-        $stmt->execute(array('data' => $data, 'godzina8'=>$godzina8, 'kolejny_dzien' => $kolejny_dzien,'godzina6'=> $godzina6, 'nr_suszarni' => $nr_suszarni));
+        $stmt->execute(array('asortyment' => $asortyment_id,'data' => $data, 'godzina8'=>$godzina8, 'asortyment' => $asortyment_id, 'kolejny_dzien' => $kolejny_dzien,'godzina6'=> $godzina6, 'nr_suszarni' => $nr_suszarni));
        // $stmt->execute();
         $wynik = $stmt->fetchAll();
         dump($stmt->fetchAll());

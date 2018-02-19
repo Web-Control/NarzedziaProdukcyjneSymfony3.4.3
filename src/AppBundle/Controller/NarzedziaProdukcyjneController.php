@@ -53,27 +53,49 @@ class NarzedziaProdukcyjneController extends Controller
 
         $form = $this->createForm(dodajDaneProcesuSuszeniaFormType::class);
        
-
         // only handles data on POST
         $form->handleRequest($request);
         //dump($form);
-        $data = $form->get('data')->getData();
+       
 
         if ($form->isSubmitted() && $form->isValid())
-         {
+         {  
+            $data_form = $form->get('data')->getData();
+            $data = date_format($data_form, 'Y-m-d'); //Zamieniamy obiekt na string
+            $data_raportu ="";
+
+            $godzina_form = $form->get('godzina')->getData();
+            $godzina_string = date_format($godzina_form, 'H:m:s'); //Zamieniamy na string
+            $godzina = intval($godzina_string); //Godzine zamieniamy na integer
+    
+            //Ustawiamy datę raportu
+             if ($godzina >=0 && $godzina < 8)
+             {
+                $data_raportu = date('Y-m-d', strtotime($data . ' -1 day'));
+             } else {
+                 $data_raportu = $data;
+             }
+             
+            //  dump($godzina_form);
+            //  dump($godzina_string);
+            //  dump($godzina);
+            //  dump($data_raportu);    
+
             $asortyment_z_form = $form->get('asortyment')->getData(); //Obiekt
+            $asortyment_id = $asortyment_z_form->getId();
             $asortyment = $asortyment_z_form->getAsortyment();
             $nr_suszarni = $form->get('nrSuszarni')->getData();
             $wiadomosc="";
             
-            dump($asortyment);
+            // dump($asortyment_id);
+            // dump($asortyment);
             $nowe_dane_suszenia = $form->getData(); //To jest obiekt
             $em = $this->getDoctrine()->getManager();
            // dump($nowe_dane_suszenia);
 
             //Sprawdzamy czy takie dane juz istnieją
-            $dane_istnieja = $em->getRepository('AppBundle:DaneSuszenia')->findOneBy(array('nrSuszarni' => $form->get('nrSuszarni')->getData(), 'data' => $form->get('data')->getData(), 'godzina' => $form->get('godzina')->getData() ));
-           // dump($dane_istnieja);
+            $dane_istnieja = $em->getRepository('AppBundle:DaneSuszenia')->findOneBy(array('Asortyment' => $form->get('asortyment')->getData(),'nrSuszarni' => $form->get('nrSuszarni')->getData(), 'data' => $form->get('data')->getData(), 'godzina' => $form->get('godzina')->getData() ));
+            //dump($dane_istnieja);
 
              if ($form->getClickedButton() && 'zapisz' === $form->getClickedButton()->getName())
                  {
@@ -122,6 +144,9 @@ class NarzedziaProdukcyjneController extends Controller
                     $dane_istnieja->setWykonawcaPomiaru($form->get('wykonawcaPomiaru')->getData());
                     
                     $em->flush();
+
+                    $wiadomosc = 'Dane zostaly edytowane';
+                    $info = ['info' => $wiadomosc];
                     
                    //$this->addFlash('success', '<b>Sukces!!!</b> Edytowano dane do raportu. ');
                     
@@ -167,19 +192,28 @@ class NarzedziaProdukcyjneController extends Controller
 
                      return $this->redirectToRoute('tworzenieRaportuSuszenia');
                   }
-              }  
+              }
 
                 $dane_z_bazy = $this->getDoctrine()
                 ->getRepository('AppBundle:DaneSuszenia')
-                ->raportSuszenia($data,$nr_suszarni);
+                ->raportSuszenia($asortyment_id,$data_raportu,$nr_suszarni);
                 //->raportSuszenia2($data,$asortyment,$nr_suszarni);
 
                 dump($dane_z_bazy);
 
                  $info = ['raport' => $dane_z_bazy,'asortyment' => $asortyment,'info' => $wiadomosc];
-                 return new JsonResponse($info);  
+                 return new JsonResponse($info); 
+
+                
               
-        }
+        } 
+
+        if ($form->isSubmitted() && !$form->isValid())
+            {   
+                $wiadomosc = 'Zle dane';
+                $info = ['info' => $wiadomosc];
+                return new JsonResponse($info);      
+            }
       
 
         return $this->render('NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig', [

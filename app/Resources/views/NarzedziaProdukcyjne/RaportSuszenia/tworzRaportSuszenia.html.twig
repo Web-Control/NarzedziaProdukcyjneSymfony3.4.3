@@ -40,10 +40,10 @@
 
                  <div class="row">
                     <div class="col-sm-4">
-                        {{ form_row(dodajDaneSuszeniaForm.predkoscBlanszownika) }}
+                        {{ form_row(dodajDaneSuszeniaForm.predkoscBlanszownika,{'attr': {'max': '120'}}) }}
                     </div>
                      <div class="col-sm-4">
-                        {{ form_row(dodajDaneSuszeniaForm.temperaturaBlanszownika) }}
+                        {{ form_row(dodajDaneSuszeniaForm.temperaturaBlanszownika,{'attr': {'max': '120'}}) }}
                     </div>
                 </div>
                 <hr>
@@ -134,7 +134,6 @@
 {% block javascripts %}
 {{ parent() }}
 
-
 <script>
 
     //Akcja do wykonania
@@ -179,11 +178,38 @@
         type: "POST",
         data: serializedData,
         async: true,
+            beforeSend:function(data)
+            {
+                 var formularz = $("form").serializeArray();
+                 console.log(formularz)
+                     $.each(formularz, function(i, field)
+                     {
+                       // $("#results").append(field.name + ":" + field.value + " ");
+                        if(formularz[i].value == "")
+                        {
+                           var dlugosc = formularz[i].name.length-1;
+
+                          jQuery('#info').html('<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Wypełnij puste pole: <b>'+formularz[i].name.substring(33,dlugosc)+'</b>.</div>')
+
+                          xhr.abort();   
+                        }
+                    }
+                    );
+            },
+            error: function (data)
+            {
+                 jQuery('#bledy').html('<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Wymiana danych z serwerem nie powiodła się. Błąd połączenia AJAX. Zgłoś problemy z aplikacją do jej administratora. </div>') 
+            },
             success: function (data)
              {
                     
                 if (zapisz) 
                 {   
+                      if (data.info == "Zle dane")
+                    {
+                       jQuery('#info').html('<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Wprowadziłeś złe dane do raportu! Maksymalne wartości temperatur i prędkości siatek to 120Hz. Maksymalna wilgotność to 20%.</div>') 
+                    }
+
                      if (data.info == "Dane istnieja")
                     {
                        jQuery('#info').html('<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Dane raportu z podanego dnia i godziny już istnieją.</div>') 
@@ -197,18 +223,30 @@
 
                  if (edytuj) 
                 {    
+                    if (data.info == "Zle dane")
+                    {
+                       jQuery('#info').html('<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Wprowadziłeś złe dane do raportu! Maksymalne wartości temperatur i prędkości siatek to 120Hz. Maksymalna wilgotność to 20%.</div>') 
+                    }
+
                     if (data.info == "Dane nie istnieja")
                     {
                        jQuery('#info').html('<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Dane raportu z podanego dnia i godziny nie istnieją.</div>') 
-                    } else
-                        {
+                    } 
+
+                    if(data.info == "Dane zostaly edytowane")
+                    {
                         jQuery('#info').html('<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Sukces!!!</b>&nbsp Wybrane dane zostały edytowane.</div>')
-                        }
+                    }
 
                 }
 
                  if (usun) 
                  { 
+                    if (data.info == "Zle dane")
+                    {
+                       jQuery('#info').html('<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Wprowadziłeś złe dane do raportu! Maksymalne wartości temperatur i prędkości siatek to 120Hz. Maksymalna wilgotność to 20%.</div>') 
+                    }
+
                       if (data.info == "Dane usunieto")
                     {
                         jQuery('#info').html('<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Sukces!!!</b>&nbsp Wybrane dane zostały usunięte.</div>')
@@ -227,6 +265,7 @@
 
                     console.log(data.asortyment)
                     console.log(data.raport)
+                     console.log(data.info)
 
                     var data_raportu = data.raport['0']['Data'].substring(0, 11);
 
@@ -235,13 +274,13 @@
 
                     tabela_wynikowa+=naglowek_tabeli;
 
-                    var wielkosci = '<div id="tabela_wielkosci">Godzina<br / >Prędkość Blanszownika Hz<br / >Temp. Blanszownika &deg;C<br / >Siatka nr 7 Hz<br / >Siatka nr 6 Hz<br / >Siatka nr 5 Hz<br / >Siatka nr 4 Hz<br / >Siatka nr 3 Hz<br / >Siatka nr 2 Hz<br / >Siatka nr 1 Hz<br / >Temp. Góra &deg;C<br / >Temp. Dół &deg;C<br / >Wilgotność %<br / >Wykonawca Pomiaru<br / ></div>';
+                    var wielkosci = '<div id="tabela_wielkosci">Godzina<br / >Prędkość Blanszownika Hz<br / >Temp. Blanszownika &deg;C<br / ><span id="wiersz">Siatka nr 7 Hz</span><br / >Siatka nr 6 Hz<br / >Siatka nr 5 Hz<br / >Siatka nr 4 Hz<br / >Siatka nr 3 Hz<br / >Siatka nr 2 Hz<br / >Siatka nr 1 Hz<br / >Temp. Góra &deg;C<br / >Temp. Dół &deg;C<br / >Wilgotność %<br / >Wykonawca Pomiaru<br / ></div>';
 
                     tabela_wynikowa+=wielkosci;
 
                     for (var i in data.raport) 
                     {
-                    tabela_wynikowa +='<div id="tabela_wynikow">'+data.raport[i].Godzina.substring(0,5)+'<br / >'+data.raport[i].PredkoscBlanszownika+'<br / >'+data.raport[i].TemperaturaBlanszownika+'<br / >'+data.raport[i].PredkoscSiatkiNr7+'<br / >'+data.raport[i].PredkoscSiatkiNr6+'<br / >'+data.raport[i].PredkoscSiatkiNr5+'<br / >'+data.raport[i].PredkoscSiatkiNr4+'<br / >'+data.raport[i].PredkoscSiatkiNr3+'<br / >'+data.raport[i].PredkoscSiatkiNr2+'<br / >'+data.raport[i].PredkoscSiatkiNr1+'<br / >'+data.raport[i].TemperaturaGora+'<br / >'+data.raport[i].TemperaturaDol+'<br / >'+data.raport[i].Wilgotnosc+'<br / ><span class="osoba">'+data.raport[i].WykonawcaPomiaru+'</span></div>'
+                    tabela_wynikowa +='<div id="tabela_wynikow">'+data.raport[i].Godzina.substring(0,5)+'<br / >'+data.raport[i].PredkoscBlanszownika+' Hz<br / >'+data.raport[i].TemperaturaBlanszownika+' &deg;C<br / ><span id="wiersz">'+data.raport[i].PredkoscSiatkiNr7+' Hz</span><br / >'+data.raport[i].PredkoscSiatkiNr6+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr5+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr4+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr3+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr2+' Hz<br / >'+data.raport[i].PredkoscSiatkiNr1+' Hz<br / >'+data.raport[i].TemperaturaGora+' &deg;C<br / >'+data.raport[i].TemperaturaDol+' &deg;C<br / >'+data.raport[i].Wilgotnosc+' %<br / ><span class="osoba">'+data.raport[i].WykonawcaPomiaru+'</span></div>'
                     }
 
                     //Dane raportu
@@ -250,7 +289,6 @@
             }
     });
 });
-
 </script>
 
 
