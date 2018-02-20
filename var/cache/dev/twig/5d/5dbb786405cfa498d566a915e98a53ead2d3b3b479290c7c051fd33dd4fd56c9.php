@@ -22,29 +22,29 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c359bf7b1b46b27aa75b075714bb4d27e8c65a1ecef0a0eb7aa3caf2c43e5558 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_c359bf7b1b46b27aa75b075714bb4d27e8c65a1ecef0a0eb7aa3caf2c43e5558->enter($__internal_c359bf7b1b46b27aa75b075714bb4d27e8c65a1ecef0a0eb7aa3caf2c43e5558_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
+        $__internal_1ac37d32f021402c0dc8bfb96e05bc1c6cf6c8decc500b3cc5b498361fc057d0 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_1ac37d32f021402c0dc8bfb96e05bc1c6cf6c8decc500b3cc5b498361fc057d0->enter($__internal_1ac37d32f021402c0dc8bfb96e05bc1c6cf6c8decc500b3cc5b498361fc057d0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
 
-        $__internal_0645dd5ed3060ef1732470cd2c228e041c11ed662a6ba61b8dafe37fac4727bd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_0645dd5ed3060ef1732470cd2c228e041c11ed662a6ba61b8dafe37fac4727bd->enter($__internal_0645dd5ed3060ef1732470cd2c228e041c11ed662a6ba61b8dafe37fac4727bd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
+        $__internal_a4c9453295826f57e9c4d41233dfa71ee5d2ae8c1e6e37503c15e32705730c15 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_a4c9453295826f57e9c4d41233dfa71ee5d2ae8c1e6e37503c15e32705730c15->enter($__internal_a4c9453295826f57e9c4d41233dfa71ee5d2ae8c1e6e37503c15e32705730c15_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_c359bf7b1b46b27aa75b075714bb4d27e8c65a1ecef0a0eb7aa3caf2c43e5558->leave($__internal_c359bf7b1b46b27aa75b075714bb4d27e8c65a1ecef0a0eb7aa3caf2c43e5558_prof);
+        $__internal_1ac37d32f021402c0dc8bfb96e05bc1c6cf6c8decc500b3cc5b498361fc057d0->leave($__internal_1ac37d32f021402c0dc8bfb96e05bc1c6cf6c8decc500b3cc5b498361fc057d0_prof);
 
         
-        $__internal_0645dd5ed3060ef1732470cd2c228e041c11ed662a6ba61b8dafe37fac4727bd->leave($__internal_0645dd5ed3060ef1732470cd2c228e041c11ed662a6ba61b8dafe37fac4727bd_prof);
+        $__internal_a4c9453295826f57e9c4d41233dfa71ee5d2ae8c1e6e37503c15e32705730c15->leave($__internal_a4c9453295826f57e9c4d41233dfa71ee5d2ae8c1e6e37503c15e32705730c15_prof);
 
     }
 
     // line 2
     public function block_content($context, array $blocks = array())
     {
-        $__internal_73ea63c278aeab2f2b14a42f25377c6b1674431cbe63494c728e6380baf4bb1a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_73ea63c278aeab2f2b14a42f25377c6b1674431cbe63494c728e6380baf4bb1a->enter($__internal_73ea63c278aeab2f2b14a42f25377c6b1674431cbe63494c728e6380baf4bb1a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_4f8807688f9b54997756f561f50bd8f14eea63dc524c64c0e6c55c6023af9054 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_4f8807688f9b54997756f561f50bd8f14eea63dc524c64c0e6c55c6023af9054->enter($__internal_4f8807688f9b54997756f561f50bd8f14eea63dc524c64c0e6c55c6023af9054_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_f5036c44d13dbbc7b1c45789d5b1b56d760089d2e46a2b8001dfe2d12b83ab0e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_f5036c44d13dbbc7b1c45789d5b1b56d760089d2e46a2b8001dfe2d12b83ab0e->enter($__internal_f5036c44d13dbbc7b1c45789d5b1b56d760089d2e46a2b8001dfe2d12b83ab0e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_781114b5f0ae5835527a63e015c296bfc20c162643e84995481e3e9601e8dba8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_781114b5f0ae5835527a63e015c296bfc20c162643e84995481e3e9601e8dba8->enter($__internal_781114b5f0ae5835527a63e015c296bfc20c162643e84995481e3e9601e8dba8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 3
         $this->displayParentBlock("content", $context, $blocks);
@@ -246,7 +246,6 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
    <br>
    <div id=\"info\"></div>
-
    <br><br>
    <div id=\"raport\"></div>
 
@@ -254,23 +253,23 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
 ";
         
-        $__internal_f5036c44d13dbbc7b1c45789d5b1b56d760089d2e46a2b8001dfe2d12b83ab0e->leave($__internal_f5036c44d13dbbc7b1c45789d5b1b56d760089d2e46a2b8001dfe2d12b83ab0e_prof);
+        $__internal_781114b5f0ae5835527a63e015c296bfc20c162643e84995481e3e9601e8dba8->leave($__internal_781114b5f0ae5835527a63e015c296bfc20c162643e84995481e3e9601e8dba8_prof);
 
         
-        $__internal_73ea63c278aeab2f2b14a42f25377c6b1674431cbe63494c728e6380baf4bb1a->leave($__internal_73ea63c278aeab2f2b14a42f25377c6b1674431cbe63494c728e6380baf4bb1a_prof);
+        $__internal_4f8807688f9b54997756f561f50bd8f14eea63dc524c64c0e6c55c6023af9054->leave($__internal_4f8807688f9b54997756f561f50bd8f14eea63dc524c64c0e6c55c6023af9054_prof);
 
     }
 
-    // line 134
+    // line 133
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_caa5815d494c57879375d0c07c9762677ea9aafe5f2f3aa4b2deeb63d719949b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_caa5815d494c57879375d0c07c9762677ea9aafe5f2f3aa4b2deeb63d719949b->enter($__internal_caa5815d494c57879375d0c07c9762677ea9aafe5f2f3aa4b2deeb63d719949b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_3b3384757ebe1dbb66bade3c6b31e599e4c7dee17da2caff839e15dd67f4b0cb = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_3b3384757ebe1dbb66bade3c6b31e599e4c7dee17da2caff839e15dd67f4b0cb->enter($__internal_3b3384757ebe1dbb66bade3c6b31e599e4c7dee17da2caff839e15dd67f4b0cb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        $__internal_d442b4d1a89dcdc8e53b6d378c0588e3186fa88f7d305dce85f745485ababf57 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_d442b4d1a89dcdc8e53b6d378c0588e3186fa88f7d305dce85f745485ababf57->enter($__internal_d442b4d1a89dcdc8e53b6d378c0588e3186fa88f7d305dce85f745485ababf57_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_83550ee6af211abd63f03c8a4812e0276a3560e8e6569e6890fbd0e588a8ab31 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_83550ee6af211abd63f03c8a4812e0276a3560e8e6569e6890fbd0e588a8ab31->enter($__internal_83550ee6af211abd63f03c8a4812e0276a3560e8e6569e6890fbd0e588a8ab31_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 135
+        // line 134
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
 
@@ -295,6 +294,12 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
     \$(\"button[type='submit']\").click(function(e) {
     e.preventDefault();
+
+    jQuery('#info').html('<div > <img id=\"loader\" src=\"";
+        // line 158
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/loader.gif"), "html", null, true);
+        echo "\" /> </div>') 
+    
     
     var serializedData = \"\";
     serializedData = \$(\"form\").serialize();
@@ -336,9 +341,13 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                     }
                     );
             },
+             start: function()
+            {
+                \$(\"#loader\").show();
+            },
             error: function (data)
             {
-                 jQuery('#bledy').html('<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Wymiana danych z serwerem nie powiodła się. Błąd połączenia AJAX. Zgłoś problemy z aplikacją do jej administratora. </div>') 
+                 jQuery('#info').html('<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Wymiana danych z serwerem nie powiodła się. Błąd połączenia AJAX. Zgłoś problemy z aplikacją do jej administratora. </div>') 
             },
             success: function (data)
              {
@@ -426,6 +435,11 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                     //Dane raportu
                     \$('div#raport').html(tabela_wynikowa);
                     //document.getElementById('raport').innerHTML = tabela_wynikowa;
+            },
+            complete: function()
+            {
+                 \$(\"#loader\").hide();
+                 
             }
     });
 });
@@ -434,10 +448,10 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
 ";
         
-        $__internal_d442b4d1a89dcdc8e53b6d378c0588e3186fa88f7d305dce85f745485ababf57->leave($__internal_d442b4d1a89dcdc8e53b6d378c0588e3186fa88f7d305dce85f745485ababf57_prof);
+        $__internal_83550ee6af211abd63f03c8a4812e0276a3560e8e6569e6890fbd0e588a8ab31->leave($__internal_83550ee6af211abd63f03c8a4812e0276a3560e8e6569e6890fbd0e588a8ab31_prof);
 
         
-        $__internal_caa5815d494c57879375d0c07c9762677ea9aafe5f2f3aa4b2deeb63d719949b->leave($__internal_caa5815d494c57879375d0c07c9762677ea9aafe5f2f3aa4b2deeb63d719949b_prof);
+        $__internal_3b3384757ebe1dbb66bade3c6b31e599e4c7dee17da2caff839e15dd67f4b0cb->leave($__internal_3b3384757ebe1dbb66bade3c6b31e599e4c7dee17da2caff839e15dd67f4b0cb_prof);
 
     }
 
@@ -453,7 +467,7 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
     public function getDebugInfo()
     {
-        return array (  274 => 135,  265 => 134,  241 => 119,  237 => 117,  229 => 111,  223 => 108,  217 => 105,  206 => 97,  200 => 94,  190 => 87,  184 => 84,  174 => 77,  168 => 74,  159 => 68,  153 => 65,  144 => 59,  138 => 56,  132 => 53,  122 => 46,  116 => 43,  106 => 36,  100 => 33,  92 => 28,  86 => 25,  79 => 21,  65 => 10,  57 => 7,  50 => 3,  41 => 2,  11 => 1,);
+        return array (  300 => 158,  273 => 134,  264 => 133,  241 => 119,  237 => 117,  229 => 111,  223 => 108,  217 => 105,  206 => 97,  200 => 94,  190 => 87,  184 => 84,  174 => 77,  168 => 74,  159 => 68,  153 => 65,  144 => 59,  138 => 56,  132 => 53,  122 => 46,  116 => 43,  106 => 36,  100 => 33,  92 => 28,  86 => 25,  79 => 21,  65 => 10,  57 => 7,  50 => 3,  41 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -591,7 +605,6 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
    <br>
    <div id=\"info\"></div>
-
    <br><br>
    <div id=\"raport\"></div>
 
@@ -623,6 +636,9 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
     \$(\"button[type='submit']\").click(function(e) {
     e.preventDefault();
+
+    jQuery('#info').html('<div > <img id=\"loader\" src=\"{{ asset('images/loader.gif') }}\" /> </div>') 
+    
     
     var serializedData = \"\";
     serializedData = \$(\"form\").serialize();
@@ -664,9 +680,13 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                     }
                     );
             },
+             start: function()
+            {
+                \$(\"#loader\").show();
+            },
             error: function (data)
             {
-                 jQuery('#bledy').html('<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Wymiana danych z serwerem nie powiodła się. Błąd połączenia AJAX. Zgłoś problemy z aplikacją do jej administratora. </div>') 
+                 jQuery('#info').html('<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button><b>Uwaga!!!</b>&nbsp Wymiana danych z serwerem nie powiodła się. Błąd połączenia AJAX. Zgłoś problemy z aplikacją do jej administratora. </div>') 
             },
             success: function (data)
              {
@@ -754,6 +774,11 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                     //Dane raportu
                     \$('div#raport').html(tabela_wynikowa);
                     //document.getElementById('raport').innerHTML = tabela_wynikowa;
+            },
+            complete: function()
+            {
+                 \$(\"#loader\").hide();
+                 
             }
     });
 });

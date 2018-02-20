@@ -136,6 +136,16 @@ form label
      color:black;
     }
 
+    #loader {
+      padding: 10px;
+      background-color: white;
+      height:120px;
+      width: 120px;
+      position:fixed;
+      left:50%;
+      top:45%;
+    }
+
 #wiersz:hover {
   background-color: #dee0e6;
 }

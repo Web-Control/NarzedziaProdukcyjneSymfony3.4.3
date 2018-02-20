@@ -123,7 +123,6 @@
 
    <br>
    <div id="info"></div>
-
    <br><br>
    <div id="raport"></div>
 
@@ -155,6 +154,9 @@
 
     $("button[type='submit']").click(function(e) {
     e.preventDefault();
+
+    jQuery('#info').html('<div > <img id="loader" src="{{ asset('images/loader.gif') }}" /> </div>') 
+    
     
     var serializedData = "";
     serializedData = $("form").serialize();
@@ -196,9 +198,13 @@
                     }
                     );
             },
+             start: function()
+            {
+                $("#loader").show();
+            },
             error: function (data)
             {
-                 jQuery('#bledy').html('<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Wymiana danych z serwerem nie powiodła się. Błąd połączenia AJAX. Zgłoś problemy z aplikacją do jej administratora. </div>') 
+                 jQuery('#info').html('<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Wymiana danych z serwerem nie powiodła się. Błąd połączenia AJAX. Zgłoś problemy z aplikacją do jej administratora. </div>') 
             },
             success: function (data)
              {
@@ -286,6 +292,11 @@
                     //Dane raportu
                     $('div#raport').html(tabela_wynikowa);
                     //document.getElementById('raport').innerHTML = tabela_wynikowa;
+            },
+            complete: function()
+            {
+                 $("#loader").hide();
+                 
             }
     });
 });
