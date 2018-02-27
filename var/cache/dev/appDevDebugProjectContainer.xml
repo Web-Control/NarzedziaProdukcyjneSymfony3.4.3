@@ -593,6 +593,9 @@
     <service id="AppBundle\Form\dodajDaneProcesuSuszeniaFormType" class="AppBundle\Form\dodajDaneProcesuSuszeniaFormType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="AppBundle\Form\dodajInfoDodatkoweFormType" class="AppBundle\Form\dodajInfoDodatkoweFormType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="AppBundle\Form\roleFormType" class="AppBundle\Form\roleFormType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -612,7 +615,7 @@
     </service>
     <service id="argument_resolver.service" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-50"/>
-      <argument type="service" id="service_locator.2e..xsq"/>
+      <argument type="service" id="service_locator.dckygph"/>
     </service>
     <service id="argument_resolver.default" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false">
       <tag name="controller.argument_value_resolver" priority="-100"/>
@@ -870,6 +873,7 @@
       <argument type="collection">
         <argument>AppBundle\Form\dodajAsortymentSuszuFormType</argument>
         <argument>AppBundle\Form\dodajDaneProcesuSuszeniaFormType</argument>
+        <argument>AppBundle\Form\dodajInfoDodatkoweFormType</argument>
         <argument>AppBundle\Form\roleFormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -1074,7 +1078,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id="service_locator._vmhfpk"/>
+      <argument type="service" id="service_locator.rd93w4t"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.http_foundation"/>
@@ -4834,6 +4838,8 @@
     <service id="abstract.instanceof.AppBundle\Form\dodajAsortymentSuszuFormType" class="AppBundle\Form\dodajAsortymentSuszuFormType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\dodajDaneProcesuSuszeniaFormType" class="AppBundle\Form\dodajDaneProcesuSuszeniaFormType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Form\dodajDaneProcesuSuszeniaFormType" class="AppBundle\Form\dodajDaneProcesuSuszeniaFormType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\dodajInfoDodatkoweFormType" class="AppBundle\Form\dodajInfoDodatkoweFormType" public="false" autowire="true" abstract="true"/>
+    <service id="abstract.instanceof.AppBundle\Form\dodajInfoDodatkoweFormType" class="AppBundle\Form\dodajInfoDodatkoweFormType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="instanceof.Symfony\Component\Form\FormTypeInterface.0.AppBundle\Form\roleFormType" class="AppBundle\Form\roleFormType" public="false" autowire="true" abstract="true"/>
     <service id="abstract.instanceof.AppBundle\Form\roleFormType" class="AppBundle\Form\roleFormType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id="service_locator.hkgaz1j" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -4848,7 +4854,7 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id="service_locator.2e..xsq" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.dckygph" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
@@ -4976,11 +4982,12 @@
         <argument key="inline" type="service" id="fragment.renderer.inline"/>
       </argument>
     </service>
-    <service id="service_locator._vmhfpk" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.rd93w4t" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="AppBundle\Form\dodajAsortymentSuszuFormType" type="service" id="AppBundle\Form\dodajAsortymentSuszuFormType"/>
         <argument key="AppBundle\Form\dodajDaneProcesuSuszeniaFormType" type="service" id="AppBundle\Form\dodajDaneProcesuSuszeniaFormType"/>
+        <argument key="AppBundle\Form\dodajInfoDodatkoweFormType" type="service" id="AppBundle\Form\dodajInfoDodatkoweFormType"/>
         <argument key="AppBundle\Form\roleFormType" type="service" id="AppBundle\Form\roleFormType"/>
         <argument key="FOS\UserBundle\Form\Type\ChangePasswordFormType" type="service" id="fos_user.change_password.form.type"/>
         <argument key="FOS\UserBundle\Form\Type\ProfileFormType" type="service" id="fos_user.profile.form.type"/>

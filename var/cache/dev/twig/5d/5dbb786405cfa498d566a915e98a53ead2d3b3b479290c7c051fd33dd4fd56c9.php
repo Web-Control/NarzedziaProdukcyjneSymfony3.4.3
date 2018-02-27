@@ -22,29 +22,29 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1ac37d32f021402c0dc8bfb96e05bc1c6cf6c8decc500b3cc5b498361fc057d0 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_1ac37d32f021402c0dc8bfb96e05bc1c6cf6c8decc500b3cc5b498361fc057d0->enter($__internal_1ac37d32f021402c0dc8bfb96e05bc1c6cf6c8decc500b3cc5b498361fc057d0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
+        $__internal_c9f360e122ab2d81b053cd1de356f145eb3fb87fe24f323cf55ba876a62bc28b = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_c9f360e122ab2d81b053cd1de356f145eb3fb87fe24f323cf55ba876a62bc28b->enter($__internal_c9f360e122ab2d81b053cd1de356f145eb3fb87fe24f323cf55ba876a62bc28b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
 
-        $__internal_a4c9453295826f57e9c4d41233dfa71ee5d2ae8c1e6e37503c15e32705730c15 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_a4c9453295826f57e9c4d41233dfa71ee5d2ae8c1e6e37503c15e32705730c15->enter($__internal_a4c9453295826f57e9c4d41233dfa71ee5d2ae8c1e6e37503c15e32705730c15_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
+        $__internal_5b72948c533e2e8be5572ca314aa495ea367387129a6daf8310f82756026c99f = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_5b72948c533e2e8be5572ca314aa495ea367387129a6daf8310f82756026c99f->enter($__internal_5b72948c533e2e8be5572ca314aa495ea367387129a6daf8310f82756026c99f_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_1ac37d32f021402c0dc8bfb96e05bc1c6cf6c8decc500b3cc5b498361fc057d0->leave($__internal_1ac37d32f021402c0dc8bfb96e05bc1c6cf6c8decc500b3cc5b498361fc057d0_prof);
+        $__internal_c9f360e122ab2d81b053cd1de356f145eb3fb87fe24f323cf55ba876a62bc28b->leave($__internal_c9f360e122ab2d81b053cd1de356f145eb3fb87fe24f323cf55ba876a62bc28b_prof);
 
         
-        $__internal_a4c9453295826f57e9c4d41233dfa71ee5d2ae8c1e6e37503c15e32705730c15->leave($__internal_a4c9453295826f57e9c4d41233dfa71ee5d2ae8c1e6e37503c15e32705730c15_prof);
+        $__internal_5b72948c533e2e8be5572ca314aa495ea367387129a6daf8310f82756026c99f->leave($__internal_5b72948c533e2e8be5572ca314aa495ea367387129a6daf8310f82756026c99f_prof);
 
     }
 
     // line 2
     public function block_content($context, array $blocks = array())
     {
-        $__internal_4f8807688f9b54997756f561f50bd8f14eea63dc524c64c0e6c55c6023af9054 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_4f8807688f9b54997756f561f50bd8f14eea63dc524c64c0e6c55c6023af9054->enter($__internal_4f8807688f9b54997756f561f50bd8f14eea63dc524c64c0e6c55c6023af9054_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_386073c92cb043f1233834962ca56903e6b6398ca8a27ee4840d04d9bbffccd5 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_386073c92cb043f1233834962ca56903e6b6398ca8a27ee4840d04d9bbffccd5->enter($__internal_386073c92cb043f1233834962ca56903e6b6398ca8a27ee4840d04d9bbffccd5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_781114b5f0ae5835527a63e015c296bfc20c162643e84995481e3e9601e8dba8 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_781114b5f0ae5835527a63e015c296bfc20c162643e84995481e3e9601e8dba8->enter($__internal_781114b5f0ae5835527a63e015c296bfc20c162643e84995481e3e9601e8dba8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_1675a078ead2cb61d2c9799512eb647b31143114b3d7df13ece68310f2cb5b80 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_1675a078ead2cb61d2c9799512eb647b31143114b3d7df13ece68310f2cb5b80->enter($__internal_1675a078ead2cb61d2c9799512eb647b31143114b3d7df13ece68310f2cb5b80_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 3
         $this->displayParentBlock("content", $context, $blocks);
@@ -74,21 +74,40 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 \t\t\t<div class=\"form-group\">
         
                 <h1>Tworzenie raportu suszenia</h1>
+                <ul class=\"nav nav-tabs\">
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link ";
+        // line 23
+        echo ((($this->getAttribute($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "request", array()), "attributes", array()), "get", array(0 => "_route"), "method") == "tworzenieRaportuSuszenia")) ? ("active") : (""));
+        echo "\" href=\"";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("tworzenieRaportuSuszenia");
+        echo "\">Dane suszenia</a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link ";
+        // line 26
+        echo ((($this->getAttribute($this->getAttribute($this->getAttribute(($context["app"] ?? $this->getContext($context, "app")), "request", array()), "attributes", array()), "get", array(0 => "_route"), "method") == "dodajInfoDodatkowe")) ? ("active") : (""));
+        echo "\" href=\"";
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("dodajInfoDodatkowe");
+        echo "\">Informacje dodatkowe</a>
+                    </li>
+                </ul>
+                <br>
                 ";
-        // line 21
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), 'form_start', array("action" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("tworzenieRaportuSuszenia")));
+        // line 30
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), 'form_start', array("attr" => array("id" => "dane_suszenia_form")));
         echo "
             
                 <div class=\"row\">
 \t\t\t\t\t<div class=\"col-sm-4\">
                         ";
-        // line 25
+        // line 34
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "asortyment", array()), 'row');
         echo "
                     </div>
                     <div class=\"col-sm-4\">
                      ";
-        // line 28
+        // line 37
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "nrSuszarni", array()), 'row');
         echo "
                     </div>
@@ -96,13 +115,13 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                 <div class=\"row\">
                     <div class=\"col-sm-4\">
                      ";
-        // line 33
+        // line 42
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "data", array()), 'row');
         echo "
                      </div>
                      <div class=\"col-sm-4\">
                       ";
-        // line 36
+        // line 45
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "godzina", array()), 'row');
         echo "
                     </div>
@@ -112,13 +131,13 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                  <div class=\"row\">
                     <div class=\"col-sm-4\">
                         ";
-        // line 43
+        // line 52
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "predkoscBlanszownika", array()), 'row', array("attr" => array("max" => "120")));
         echo "
                     </div>
                      <div class=\"col-sm-4\">
                         ";
-        // line 46
+        // line 55
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "temperaturaBlanszownika", array()), 'row', array("attr" => array("max" => "120")));
         echo "
                     </div>
@@ -128,19 +147,19 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                 <div class=\"row\">
                     <div class=\"col-sm-4\">
                         ";
-        // line 53
+        // line 62
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "predkoscSiatkiNr7", array()), 'row');
         echo "
                     </div>
                      <div class=\"col-sm-4\">
                         ";
-        // line 56
+        // line 65
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "predkoscSiatkiNr6", array()), 'row');
         echo "
                     </div>
                      <div class=\"col-sm-4\">
                         ";
-        // line 59
+        // line 68
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "predkoscSiatkiNr5", array()), 'row');
         echo "
                     </div>
@@ -149,13 +168,13 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                 <div class=\"row\">
                     <div class=\"col-sm-4\">
                         ";
-        // line 65
+        // line 74
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "predkoscSiatkiNr4", array()), 'row');
         echo "
                     </div>
                      <div class=\"col-sm-4\">
                         ";
-        // line 68
+        // line 77
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "predkoscSiatkiNr3", array()), 'row');
         echo "
                     </div>
@@ -164,13 +183,13 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                 <div class=\"row\">
                     <div class=\"col-sm-4\">
                         ";
-        // line 74
+        // line 83
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "predkoscSiatkiNr2", array()), 'row');
         echo "
                     </div>
                      <div class=\"col-sm-4\">
                         ";
-        // line 77
+        // line 86
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "predkoscSiatkiNr1", array()), 'row');
         echo "
                     </div>
@@ -180,13 +199,13 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                  <div class=\"row\">
                     <div class=\"col-sm-4\">
                         ";
-        // line 84
+        // line 93
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "temperaturaGora", array()), 'row');
         echo "
                     </div>
                      <div class=\"col-sm-4\">
                         ";
-        // line 87
+        // line 96
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "temperaturaDol", array()), 'row');
         echo "
                     </div>
@@ -196,13 +215,13 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                  <div class=\"row\">
                     <div class=\"col-sm-4\">
                         ";
-        // line 94
+        // line 103
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "wilgotnosc", array()), 'row');
         echo "
                     </div>
                      <div class=\"col-sm-4\">
                         ";
-        // line 97
+        // line 106
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "wykonawcaPomiaru", array()), 'row');
         echo "
                     </div>
@@ -213,19 +232,19 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
                 <div class=\"row\">
                     <div class=\"col-sm-4\">
                         ";
-        // line 105
+        // line 114
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "zapisz", array()), 'row', array("attr" => array("value" => "zapisz")));
         echo "
                     </div>
                      <div class=\"col-sm-2\">
                         ";
-        // line 108
+        // line 117
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "edytuj", array()), 'row');
         echo "
                     </div>
                      <div class=\"col-sm-2\">
                          ";
-        // line 111
+        // line 120
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), "usun", array()), 'row');
         echo "
                     </div>
@@ -233,17 +252,18 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
                 
                     ";
-        // line 117
+        // line 126
         echo "                    <br / ><br / >
 
                 ";
-        // line 119
+        // line 128
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["dodajDaneSuszeniaForm"] ?? $this->getContext($context, "dodajDaneSuszeniaForm")), 'form_end');
         echo "
             </div>
         </div>
     </div>
 
+   <br>
    <br>
    <div id=\"info\"></div>
    <br><br>
@@ -253,28 +273,27 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
 ";
         
-        $__internal_781114b5f0ae5835527a63e015c296bfc20c162643e84995481e3e9601e8dba8->leave($__internal_781114b5f0ae5835527a63e015c296bfc20c162643e84995481e3e9601e8dba8_prof);
+        $__internal_1675a078ead2cb61d2c9799512eb647b31143114b3d7df13ece68310f2cb5b80->leave($__internal_1675a078ead2cb61d2c9799512eb647b31143114b3d7df13ece68310f2cb5b80_prof);
 
         
-        $__internal_4f8807688f9b54997756f561f50bd8f14eea63dc524c64c0e6c55c6023af9054->leave($__internal_4f8807688f9b54997756f561f50bd8f14eea63dc524c64c0e6c55c6023af9054_prof);
+        $__internal_386073c92cb043f1233834962ca56903e6b6398ca8a27ee4840d04d9bbffccd5->leave($__internal_386073c92cb043f1233834962ca56903e6b6398ca8a27ee4840d04d9bbffccd5_prof);
 
     }
 
-    // line 133
+    // line 143
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_3b3384757ebe1dbb66bade3c6b31e599e4c7dee17da2caff839e15dd67f4b0cb = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_3b3384757ebe1dbb66bade3c6b31e599e4c7dee17da2caff839e15dd67f4b0cb->enter($__internal_3b3384757ebe1dbb66bade3c6b31e599e4c7dee17da2caff839e15dd67f4b0cb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_2d6ccdad7f5a06b616c7f341967e8a03369408f52b2695e572e45637e028b47e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_2d6ccdad7f5a06b616c7f341967e8a03369408f52b2695e572e45637e028b47e->enter($__internal_2d6ccdad7f5a06b616c7f341967e8a03369408f52b2695e572e45637e028b47e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        $__internal_83550ee6af211abd63f03c8a4812e0276a3560e8e6569e6890fbd0e588a8ab31 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_83550ee6af211abd63f03c8a4812e0276a3560e8e6569e6890fbd0e588a8ab31->enter($__internal_83550ee6af211abd63f03c8a4812e0276a3560e8e6569e6890fbd0e588a8ab31_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_c62d4a5806a8a17631a447bfc9391916eb602a7e1e3fb9702bb565aae0cb1a92 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_c62d4a5806a8a17631a447bfc9391916eb602a7e1e3fb9702bb565aae0cb1a92->enter($__internal_c62d4a5806a8a17631a447bfc9391916eb602a7e1e3fb9702bb565aae0cb1a92_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 134
+        // line 144
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
 
 <script>
-
     //Akcja do wykonania
     var zapisz = \"\";
     var edytuj = \"\";
@@ -292,17 +311,17 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
             usun = true;
         });
 
-    \$(\"button[type='submit']\").click(function(e) {
+    \$(\"#dodaj_dane_procesu_suszenia_form_zapisz, #dodaj_dane_procesu_suszenia_form_edytuj,#dodaj_dane_procesu_suszenia_form_usun\").click(function(e) {
     e.preventDefault();
 
-    jQuery('#info').html('<div > <img id=\"loader\" src=\"";
-        // line 158
+    jQuery('#info').html('<div id=\"loader_wraper\"> <img id=\"loader\" src=\"";
+        // line 167
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("images/loader.gif"), "html", null, true);
         echo "\" /> </div>') 
     
     
     var serializedData = \"\";
-    serializedData = \$(\"form\").serialize();
+    serializedData = \$(\"#dane_suszenia_form\").serialize();
 
    
 
@@ -319,13 +338,16 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
 
     \$.ajax({
-        url: \$(\"form\").attr('action'),
+        url: \"";
+        // line 188
+        echo twig_escape_filter($this->env, twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("tworzenieRaportuSuszenia"), "js"), "html", null, true);
+        echo "\",
         type: \"POST\",
         data: serializedData,
         async: true,
             beforeSend:function(data)
             {
-                 var formularz = \$(\"form\").serializeArray();
+                 var formularz = \$(\"#dane_suszenia_form\").serializeArray();
                  console.log(formularz)
                      \$.each(formularz, function(i, field)
                      {
@@ -438,20 +460,22 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
             },
             complete: function()
             {
-                 \$(\"#loader\").hide();
+                 \$(\"#loader_wraper\").hide();
                  
             }
     });
 });
+
+
 </script>
 
 
 ";
         
-        $__internal_83550ee6af211abd63f03c8a4812e0276a3560e8e6569e6890fbd0e588a8ab31->leave($__internal_83550ee6af211abd63f03c8a4812e0276a3560e8e6569e6890fbd0e588a8ab31_prof);
+        $__internal_c62d4a5806a8a17631a447bfc9391916eb602a7e1e3fb9702bb565aae0cb1a92->leave($__internal_c62d4a5806a8a17631a447bfc9391916eb602a7e1e3fb9702bb565aae0cb1a92_prof);
 
         
-        $__internal_3b3384757ebe1dbb66bade3c6b31e599e4c7dee17da2caff839e15dd67f4b0cb->leave($__internal_3b3384757ebe1dbb66bade3c6b31e599e4c7dee17da2caff839e15dd67f4b0cb_prof);
+        $__internal_2d6ccdad7f5a06b616c7f341967e8a03369408f52b2695e572e45637e028b47e->leave($__internal_2d6ccdad7f5a06b616c7f341967e8a03369408f52b2695e572e45637e028b47e_prof);
 
     }
 
@@ -467,7 +491,7 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
     public function getDebugInfo()
     {
-        return array (  300 => 158,  273 => 134,  264 => 133,  241 => 119,  237 => 117,  229 => 111,  223 => 108,  217 => 105,  206 => 97,  200 => 94,  190 => 87,  184 => 84,  174 => 77,  168 => 74,  159 => 68,  153 => 65,  144 => 59,  138 => 56,  132 => 53,  122 => 46,  116 => 43,  106 => 36,  100 => 33,  92 => 28,  86 => 25,  79 => 21,  65 => 10,  57 => 7,  50 => 3,  41 => 2,  11 => 1,);
+        return array (  343 => 188,  319 => 167,  293 => 144,  284 => 143,  260 => 128,  256 => 126,  248 => 120,  242 => 117,  236 => 114,  225 => 106,  219 => 103,  209 => 96,  203 => 93,  193 => 86,  187 => 83,  178 => 77,  172 => 74,  163 => 68,  157 => 65,  151 => 62,  141 => 55,  135 => 52,  125 => 45,  119 => 42,  111 => 37,  105 => 34,  98 => 30,  89 => 26,  81 => 23,  65 => 10,  57 => 7,  50 => 3,  41 => 2,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -500,7 +524,16 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 \t\t\t<div class=\"form-group\">
         
                 <h1>Tworzenie raportu suszenia</h1>
-                {{ form_start(dodajDaneSuszeniaForm, {action:path('tworzenieRaportuSuszenia')}, {'attr': {'id': 'dane_suszenia'}}) }}
+                <ul class=\"nav nav-tabs\">
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link {{ app.request.attributes.get('_route') == 'tworzenieRaportuSuszenia' ? 'active' }}\" href=\"{{ path('tworzenieRaportuSuszenia') }}\">Dane suszenia</a>
+                    </li>
+                    <li class=\"nav-item\">
+                        <a class=\"nav-link {{ app.request.attributes.get('_route') == 'dodajInfoDodatkowe' ? 'active' }}\" href=\"{{ path('dodajInfoDodatkowe') }}\">Informacje dodatkowe</a>
+                    </li>
+                </ul>
+                <br>
+                {{ form_start(dodajDaneSuszeniaForm, {'attr': {'id': 'dane_suszenia_form'}}) }}
             
                 <div class=\"row\">
 \t\t\t\t\t<div class=\"col-sm-4\">
@@ -604,6 +637,7 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
     </div>
 
    <br>
+   <br>
    <div id=\"info\"></div>
    <br><br>
    <div id=\"raport\"></div>
@@ -616,7 +650,6 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 {{ parent() }}
 
 <script>
-
     //Akcja do wykonania
     var zapisz = \"\";
     var edytuj = \"\";
@@ -634,14 +667,14 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
             usun = true;
         });
 
-    \$(\"button[type='submit']\").click(function(e) {
+    \$(\"#dodaj_dane_procesu_suszenia_form_zapisz, #dodaj_dane_procesu_suszenia_form_edytuj,#dodaj_dane_procesu_suszenia_form_usun\").click(function(e) {
     e.preventDefault();
 
-    jQuery('#info').html('<div > <img id=\"loader\" src=\"{{ asset('images/loader.gif') }}\" /> </div>') 
+    jQuery('#info').html('<div id=\"loader_wraper\"> <img id=\"loader\" src=\"{{ asset('images/loader.gif') }}\" /> </div>') 
     
     
     var serializedData = \"\";
-    serializedData = \$(\"form\").serialize();
+    serializedData = \$(\"#dane_suszenia_form\").serialize();
 
    
 
@@ -658,13 +691,13 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
 
 
     \$.ajax({
-        url: \$(\"form\").attr('action'),
+        url: \"{{ path('tworzenieRaportuSuszenia')|escape('js') }}\",
         type: \"POST\",
         data: serializedData,
         async: true,
             beforeSend:function(data)
             {
-                 var formularz = \$(\"form\").serializeArray();
+                 var formularz = \$(\"#dane_suszenia_form\").serializeArray();
                  console.log(formularz)
                      \$.each(formularz, function(i, field)
                      {
@@ -777,11 +810,13 @@ class __TwigTemplate_51d589e1d25ff5dc1f44d144fafa9a88eb10e8d71d316260dba9a286b4e
             },
             complete: function()
             {
-                 \$(\"#loader\").hide();
+                 \$(\"#loader_wraper\").hide();
                  
             }
     });
 });
+
+
 </script>
 
 

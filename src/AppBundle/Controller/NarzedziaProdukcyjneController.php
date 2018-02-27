@@ -10,6 +10,7 @@ use AppBundle\Entity\AsortymentSuszu;
 use AppBundle\Entity\DaneSuszenia;
 use AppBundle\Repository\DaneSuszeniaRepository;
 use AppBundle\Form\dodajDaneProcesuSuszeniaFormType;
+use AppBundle\Form\dodajInfoDodatkoweFormType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class NarzedziaProdukcyjneController extends Controller
@@ -56,7 +57,6 @@ class NarzedziaProdukcyjneController extends Controller
         // only handles data on POST
         $form->handleRequest($request);
         //dump($form);
-       
 
         if ($form->isSubmitted() && $form->isValid())
          {  
@@ -214,13 +214,59 @@ class NarzedziaProdukcyjneController extends Controller
                 $info = ['info' => $wiadomosc];
                 return new JsonResponse($info);      
             }
-      
+
 
         return $this->render('NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig', [
             'dodajDaneSuszeniaForm' => $form->createView()
         ]);
 
     
+    }
+
+    
+     /**
+     * @Route("/NarzedziaProdukcyjne/dodajInfoDodatkowe", name="dodajInfoDodatkowe")
+     */
+    public function dodajInfoDodatkowe(Request $request)
+    {
+
+        $form_info_dodatkowe = $this->createForm(dodajInfoDodatkoweFormType::class);
+        $form_info_dodatkowe->handleRequest($request);
+
+         //Obsługa formularza info dodatkowe
+         if ($form_info_dodatkowe->getClickedButton() && 'dodajInfoDodatkowe' === $form_info_dodatkowe->getClickedButton()->getName())
+         {   
+             $wiadomosc = 'Guzik dziala';
+             $info = ['info' => $wiadomosc];
+             return new JsonResponse($info); 
+             
+             $data_form = $form_info_dodatkowe->get('data')->getData();
+             dump($data_form);
+           
+             if ($form_info_dodatkowe->isSubmitted() && $form_info_dodatkowe->isValid())
+          {
+             $wiadomosc = 'Form dziala';
+             $info2 = ['info2' => $wiadomosc];
+             return new JsonResponse($info2);     
+          }
+
+          if ($form->isSubmitted() && !$form->isValid())
+            {   
+                $wiadomosc = 'Zle dane';
+                $info = ['info' => $wiadomosc];
+                return new JsonResponse($info);      
+            }
+             
+ 
+         }
+
+
+       
+         return $this->render('NarzedziaProdukcyjne/RaportSuszenia/dodajInfoDodatkowe.html.twig', [
+            'dodajInfoDodatkoweForm' => $form_info_dodatkowe->createView()
+        ]);
+
+
     }
 
 

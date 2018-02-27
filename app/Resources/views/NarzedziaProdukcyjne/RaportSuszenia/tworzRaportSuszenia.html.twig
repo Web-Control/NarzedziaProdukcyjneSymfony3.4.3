@@ -18,7 +18,16 @@
 			<div class="form-group">
         
                 <h1>Tworzenie raportu suszenia</h1>
-                {{ form_start(dodajDaneSuszeniaForm, {action:path('tworzenieRaportuSuszenia')}, {'attr': {'id': 'dane_suszenia'}}) }}
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link {{ app.request.attributes.get('_route') == 'tworzenieRaportuSuszenia' ? 'active' }}" href="{{ path('tworzenieRaportuSuszenia') }}">Dane suszenia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ app.request.attributes.get('_route') == 'dodajInfoDodatkowe' ? 'active' }}" href="{{ path('dodajInfoDodatkowe') }}">Informacje dodatkowe</a>
+                    </li>
+                </ul>
+                <br>
+                {{ form_start(dodajDaneSuszeniaForm, {'attr': {'id': 'dane_suszenia_form'}}) }}
             
                 <div class="row">
 					<div class="col-sm-4">
@@ -122,6 +131,7 @@
     </div>
 
    <br>
+   <br>
    <div id="info"></div>
    <br><br>
    <div id="raport"></div>
@@ -134,7 +144,6 @@
 {{ parent() }}
 
 <script>
-
     //Akcja do wykonania
     var zapisz = "";
     var edytuj = "";
@@ -152,14 +161,14 @@
             usun = true;
         });
 
-    $("button[type='submit']").click(function(e) {
+    $("#dodaj_dane_procesu_suszenia_form_zapisz, #dodaj_dane_procesu_suszenia_form_edytuj,#dodaj_dane_procesu_suszenia_form_usun").click(function(e) {
     e.preventDefault();
 
-    jQuery('#info').html('<div > <img id="loader" src="{{ asset('images/loader.gif') }}" /> </div>') 
+    jQuery('#info').html('<div id="loader_wraper"> <img id="loader" src="{{ asset('images/loader.gif') }}" /> </div>') 
     
     
     var serializedData = "";
-    serializedData = $("form").serialize();
+    serializedData = $("#dane_suszenia_form").serialize();
 
    
 
@@ -176,13 +185,13 @@
 
 
     $.ajax({
-        url: $("form").attr('action'),
+        url: "{{ path('tworzenieRaportuSuszenia')|escape('js') }}",
         type: "POST",
         data: serializedData,
         async: true,
             beforeSend:function(data)
             {
-                 var formularz = $("form").serializeArray();
+                 var formularz = $("#dane_suszenia_form").serializeArray();
                  console.log(formularz)
                      $.each(formularz, function(i, field)
                      {
@@ -295,11 +304,13 @@
             },
             complete: function()
             {
-                 $("#loader").hide();
+                 $("#loader_wraper").hide();
                  
             }
     });
 });
+
+
 </script>
 
 

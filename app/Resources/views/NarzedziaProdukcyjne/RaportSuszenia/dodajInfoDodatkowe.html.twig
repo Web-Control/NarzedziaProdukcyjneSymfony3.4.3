@@ -1,0 +1,180 @@
+{% extends 'NarzedziaProdukcyjne/ramy.html.twig' %}
+{% block content %}
+{{ parent() }}
+<br>
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link {{ app.request.attributes.get('_route') == 'tworzenieRaportuSuszenia' ? 'active' }}" href="{{ path('tworzenieRaportuSuszenia') }}">Tworzenie</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link {{ app.request.attributes.get('_route') == 'roleUzytkownika' ? 'active' }}" href="#">Odczyt</a>
+  </li>
+</ul>
+
+<br><br>
+    
+    <div class="container">
+
+            <div class="row" >
+                <div id="informacje_dodatkowe_form" class="form-group">
+                    <h1>Tworzenie raportu suszenia</h1>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link {{ app.request.attributes.get('_route') == 'tworzenieRaportuSuszenia' ? 'active' }}" href="{{ path('tworzenieRaportuSuszenia') }}">Dane suszenia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ app.request.attributes.get('_route') == 'dodajInfoDodatkowe' ? 'active' }}" href="{{ path('dodajInfoDodatkowe') }}">Informacje dodatkowe</a>
+                    </li>
+                </ul>
+                <br>
+        
+                     {{ form_start(dodajInfoDodatkoweForm, {'attr': {'id': 'dane_dodatkowe_form'}} ) }}
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                {{ form_row(dodajInfoDodatkoweForm.asortyment) }}
+                            </div>
+                            <div class="col-sm-4">
+                            {{ form_row(dodajInfoDodatkoweForm.data) }}
+                            </div>
+                            <div class="col-sm-4">
+                            {{ form_row(dodajInfoDodatkoweForm.nrSuszarni) }}
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                {{ form_row(dodajInfoDodatkoweForm.ocenaTowaruZmiany1) }}
+                            </div>
+                            <div class="col-sm-4">
+                            {{ form_row(dodajInfoDodatkoweForm.ocenaTowaruZmiany2) }}
+                            </div>
+                            <div class="col-sm-4">
+                            {{ form_row(dodajInfoDodatkoweForm.ocenaTowaruZmiany3) }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                {{ form_row(dodajInfoDodatkoweForm.iloscSuszuZmiana1) }}
+                            </div>
+                            <div class="col-sm-4">
+                            {{ form_row(dodajInfoDodatkoweForm.iloscSuszuZmiana2) }}
+                            </div>
+                            <div class="col-sm-4">
+                            {{ form_row(dodajInfoDodatkoweForm.iloscSuszuZmiana3) }}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4">
+                                {{ form_row(dodajInfoDodatkoweForm.calkowitaIloscSuszu) }}
+                            </div>
+                            <div class="col-sm-4">
+                            {{ form_row(dodajInfoDodatkoweForm.dostawca) }}
+                            </div>
+                            <div class="col-sm-4">
+                            {{ form_row(dodajInfoDodatkoweForm.uwagi) }}
+                            </div>
+                        </div>
+
+                         <div class="row">
+                            <div class="col-sm-4">
+                                {{ form_row(dodajInfoDodatkoweForm.zdjecia) }}
+                            </div>
+                            <div class="col-sm-4">
+                            {{ form_row(dodajInfoDodatkoweForm.opisZdjecia) }}
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="row">
+                           <div class="col-sm-4">
+                            {{ form_row(dodajInfoDodatkoweForm.dodajInfoDodatkowe) }}
+                            </div> 
+                        </div>
+                      {{ form_rest(dodajInfoDodatkoweForm) }}  
+                     {{ form_end(dodajInfoDodatkoweForm) }}
+                </div>
+            </div> 
+
+    </div> 
+
+    <br>
+   <br>
+   <div id="info"></div>
+   <br><br>
+   <div id="raport"></div>  
+
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+
+<script>
+     $("#dodaj_info_dodatkowe_form_dodajInfoDodatkowe").click(function(e) {
+    e.preventDefault();
+
+    jQuery('#info').html('<div id="loader_wraper"> <img id="loader" src="{{ asset('images/loader.gif') }}" /> </div>') 
+        
+        var serializedData = "";
+        serializedData = "{{ path('tworzenieRaportuSuszenia')|escape('js') }}";
+        serializedData += '&dodaj_info_dodatkowe_form%5BdodajInfoDodatkowe%5D';
+        console.log(serializedData)
+
+       $.ajax({
+        url: "{{ path('dodajInfoDodatkowe')|escape('js') }}",
+        type: "POST",
+        data: serializedData,
+        async: true,
+            beforeSend:function(data)
+            {
+                 var formularz = $('#dane_dodatkowe_form').serializeArray();
+                 console.log(formularz)
+                     $.each(formularz, function(i, field)
+                     {
+                       // $("#results").append(field.name + ":" + field.value + " ");
+                        if(formularz[i].value == "")
+                        {
+                           var dlugosc = formularz[i].name.length-1;
+
+                          jQuery('#info').html('<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Wypełnij puste pole: <b>'+formularz[i].name.substring(26,dlugosc)+'</b>.</div>')
+
+                          xhr.abort();   
+                        }
+                    }
+                    );
+            },
+            error: function (data)
+            {
+                 jQuery('#info').html('<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Wymiana danych z serwerem nie powiodła się. Błąd połączenia AJAX. Zgłoś problemy z aplikacją do jej administratora. </div>') 
+            },
+            success: function (data)
+            {
+                if (data.info == "Guzik dziala")
+                    {
+                    jQuery('#info').html('<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Sukces!!!</b>&nbsp Guzik działa.</div>')
+                    } 
+
+                 if (data.info2 == "Form dziala")
+                    {
+                    jQuery('#raport').html('<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Sukces!!!</b>&nbsp Form działa.</div>')
+                    } 
+                if (data.info == "Zle dane")
+                    {
+                       jQuery('#info').html('<div class="alert alert-warning alert-dismissable"><button type="button" class="close" data-dismiss="alert">&times;</button><b>Uwaga!!!</b>&nbsp Wprowadziłeś złe dane do raportu! Maksymalne wartości temperatur i prędkości siatek to 120Hz. Maksymalna wilgotność to 20%.</div>') 
+                    }     
+            },
+            complete: function()
+            {
+                 $("#loader_wraper").hide();
+                 
+            }
+    });
+
+
+});
+</script>
+
+{% endblock %}

@@ -124,17 +124,25 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $ret;
         }
 
-        // kokpit
-        if ('/NarzedziaProdukcyjne/kokpit' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\NarzedziaProdukcyjneController::kokpitAction',  '_route' => 'kokpit',);
+        if (0 === strpos($pathinfo, '/NarzedziaProdukcyjne')) {
+            // kokpit
+            if ('/NarzedziaProdukcyjne/kokpit' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\NarzedziaProdukcyjneController::kokpitAction',  '_route' => 'kokpit',);
+            }
+
+            // tworzenieRaportuSuszenia
+            if ('/NarzedziaProdukcyjne/tworzenieRaportuSuszenia' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\NarzedziaProdukcyjneController::tworzRaportSuszenia',  '_route' => 'tworzenieRaportuSuszenia',);
+            }
+
+            // dodajInfoDodatkowe
+            if ('/NarzedziaProdukcyjne/dodajInfoDodatkowe' === $pathinfo) {
+                return array (  '_controller' => 'AppBundle\\Controller\\NarzedziaProdukcyjneController::dodajInfoDodatkowe',  '_route' => 'dodajInfoDodatkowe',);
+            }
+
         }
 
-        // tworzenieRaportuSuszenia
-        if ('/NarzedziaProdukcyjne/tworzenieRaportuSuszenia' === $pathinfo) {
-            return array (  '_controller' => 'AppBundle\\Controller\\NarzedziaProdukcyjneController::tworzRaportSuszenia',  '_route' => 'tworzenieRaportuSuszenia',);
-        }
-
-        if (0 === strpos($pathinfo, '/login')) {
+        elseif (0 === strpos($pathinfo, '/login')) {
             // fos_user_security_login
             if ('/login' === $pathinfo) {
                 if (!in_array($canonicalMethod, array('GET', 'POST'))) {
