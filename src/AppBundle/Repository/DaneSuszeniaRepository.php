@@ -29,12 +29,140 @@ class DaneSuszeniaRepository extends \Doctrine\ORM\EntityRepository
         UNION ALL
         SELECT NrSuszarni,Data,Godzina,PredkoscBlanszownika,TemperaturaBlanszownika,PredkoscSiatkiNr7,PredkoscSiatkiNr6,PredkoscSiatkiNr5,PredkoscSiatkiNr4,PredkoscSiatkiNr3,PredkoscSiatkiNr2,PredkoscSiatkiNr1,CzasSuszenia,TemperaturaGora,TemperaturaDol,Wilgotnosc,WykonawcaPomiaru FROM dane_suszenia WHERE asortyment_id=:asortyment AND Data=:kolejny_dzien AND Godzina <= :godzina6 AND NrSuszarni=:nr_suszarni ORDER BY Data,Godzina ASC ";
         $stmt = $conn->prepare($sql);
-      //  $stmt->bindValue(1, $id);
+     
         $stmt->execute(array('asortyment' => $asortyment_id,'data' => $data, 'godzina8'=>$godzina8, 'asortyment' => $asortyment_id, 'kolejny_dzien' => $kolejny_dzien,'godzina6'=> $godzina6, 'nr_suszarni' => $nr_suszarni));
-       // $stmt->execute();
+      
         $wynik = $stmt->fetchAll();
-        dump($stmt->fetchAll());
+       // dump($stmt->fetchAll());
         return $wynik;
+       // var_dump($stmt->fetchAll());die;
+        //return json_encode($wynik);
+
+    }
+
+    public function raportSuszeniaDaneDodatkowe($asortyment_id,$data_form,$nr_suszarni)
+    {   
+       // $data = date_format($data_form, 'Y-m-d'); //Zamieniamy obiekt na string
+        $data=$data_form;
+
+        $conn = $this->getEntityManager()->getConnection();
+        
+        $sql = "SELECT NrSuszarni,Data,OcenaTowaruZmiany1,OcenaTowaruZmiany2,OcenaTowaruZmiany3,IloscSuszuZmiana1,IloscSuszuZmiana2,IloscSuszuZmiana3,Dostawca,Uwagi,Zdjecia,OpisZdjecia FROM dane_suszenia WHERE asortyment_id=:asortyment AND Data=:data AND NrSuszarni=:nr_suszarni ";
+        $stmt = $conn->prepare($sql);
+     
+        $stmt->execute(array('asortyment' => $asortyment_id,'data' => $data, 'nr_suszarni' => $nr_suszarni));
+      
+        $wynik = $stmt->fetchAll();
+       // dump($stmt->fetchAll());
+        return $wynik;
+       // var_dump($stmt->fetchAll());die;
+        //return json_encode($wynik);
+
+    }
+
+    public function dziennaSredniaWilgotnosc($asortyment_id,$data_form,$nr_suszarni)
+    {   
+       // $data = date_format($data_form, 'Y-m-d'); //Zamieniamy obiekt na string
+        $data=$data_form;
+        $kolejny_dzien = date('Y-m-d', strtotime($data . ' +1 day'));
+        $godzina8='8:00:00';
+        $godzina6='6:00:00';
+
+        $Suma_Wilgotnosc1="";
+        $Suma_Wilgotnosc2="";
+        $Suma_Wilgotnosc="";
+        $Ilosc_pomiarow1="";
+        $Ilosc_pomiarow2="";
+        $Ilosc_pomiarow="";
+        $Srednia_Wilgotnosc="";
+        $precision="";
+
+        $conn = $this->getEntityManager()->getConnection();
+         //Obliczamy ilosc pomiarów wilgotności pierwszego dnia raportu
+        $sql = "SELECT COUNT(Wilgotnosc) FROM dane_suszenia WHERE asortyment_id=:asortyment AND Data=:data AND NrSuszarni=:nr_suszarni AND Godzina >= :godzina8 AND Wilgotnosc > 0";
+        $stmt = $conn->prepare($sql);
+     
+        $stmt->execute(array('asortyment' => $asortyment_id,'data' => $data, 'nr_suszarni' => $nr_suszarni, 'godzina8' => $godzina8 ));
+      
+        $Ilosc_pomiarow1 = $stmt->fetchAll();
+        dump($Ilosc_pomiarow1);
+
+         //Obliczamy sumę wilgotności pierwszego dnia raportu
+        $sql = "SELECT SUM(Wilgotnosc) FROM dane_suszenia WHERE asortyment_id=:asortyment AND Data=:data AND NrSuszarni=:nr_suszarni AND Godzina >= :godzina8 AND Wilgotnosc > 0";
+        $stmt = $conn->prepare($sql);
+     
+        $stmt->execute(array('asortyment' => $asortyment_id,'data' => $data, 'nr_suszarni' => $nr_suszarni, 'godzina8' => $godzina8 ));
+
+        $Suma_Wilgotnosc1 = $stmt->fetchAll();
+
+         //Obliczamy ilosc pomiarów wilgotności drugiego dnia raportu
+        $sql = "SELECT COUNT(Wilgotnosc) FROM dane_suszenia WHERE asortyment_id=:asortyment AND Data=:data AND NrSuszarni=:nr_suszarni AND Godzina <= :godzina6 AND Wilgotnosc > 0";
+        $stmt = $conn->prepare($sql);
+     
+        $stmt->execute(array('asortyment' => $asortyment_id,'data' => $kolejny_dzien, 'nr_suszarni' => $nr_suszarni, 'godzina6' => $godzina6 ));
+
+        $Ilosc_pomiarow2 = $stmt->fetchAll();
+
+
+        //Obliczamy sumę pomiarów wilgotności drugiego dnia raportu
+        $sql = "SELECT SUM(Wilgotnosc) FROM dane_suszenia WHERE asortyment_id=:asortyment AND Data=:data AND NrSuszarni=:nr_suszarni AND Godzina <= :godzina6 AND Wilgotnosc > 0";
+        $stmt = $conn->prepare($sql);
+     
+        $stmt->execute(array('asortyment' => $asortyment_id,'data' => $kolejny_dzien, 'nr_suszarni' => $nr_suszarni, 'godzina6' => $godzina6 ));
+
+        $Suma_Wilgotnosc2 = $stmt->fetchAll();
+
+        //Obliczamy wilgotność końcową
+        $Suma_Wilgotnosc=$Suma_Wilgotnosc1['0']['SUM(Wilgotnosc)']+$Suma_Wilgotnosc2['0']['SUM(Wilgotnosc)'];
+        $Ilosc_pomiarow=$Ilosc_pomiarow1['0']['COUNT(Wilgotnosc)']+$Ilosc_pomiarow2['0']['COUNT(Wilgotnosc)'];
+        
+       // dump($Suma_Wilgotnosc);
+        //dump($Ilosc_pomiarow);
+
+        $Srednia_Wilgotnosc=($Suma_Wilgotnosc/$Ilosc_pomiarow);
+
+        return  round($Srednia_Wilgotnosc,$precision=2);
+        ;
+       // var_dump($stmt->fetchAll());die;
+        //return json_encode($wynik);
+
+    }
+
+    public function dziennaIloscSuszuDlaSuszarni($asortyment_id,$data_form,$nr_suszarni)
+    {   
+       // $data = date_format($data_form, 'Y-m-d'); //Zamieniamy obiekt na string
+        $data=$data_form;
+
+        $conn = $this->getEntityManager()->getConnection();
+        
+        $sql = "SELECT SUM(IloscSuszuZmiana1+IloscSuszuZmiana2+IloscSuszuZmiana3) FROM dane_suszenia WHERE asortyment_id=:asortyment AND Data=:data AND NrSuszarni=:nr_suszarni ";
+        $stmt = $conn->prepare($sql);
+     
+        $stmt->execute(array('asortyment' => $asortyment_id,'data' => $data, 'nr_suszarni' => $nr_suszarni));
+      
+        $wynik = $stmt->fetchAll();
+        //dump($wynik);
+        return $wynik['0']['SUM(IloscSuszuZmiana1+IloscSuszuZmiana2+IloscSuszuZmiana3)'];
+       // var_dump($stmt->fetchAll());die;
+        //return json_encode($wynik);
+
+    }
+
+    public function calkowitaIloscSuszuDanegoDnia($asortyment_id,$data_form)
+    {   
+       // $data = date_format($data_form, 'Y-m-d'); //Zamieniamy obiekt na string
+        $data=$data_form;
+
+        $conn = $this->getEntityManager()->getConnection();
+        
+        $sql = "SELECT CalkowitaIloscSuszu FROM dane_suszenia WHERE asortyment_id=:asortyment AND Data=:data AND CalkowitaIloscSuszu > 0 ";
+        $stmt = $conn->prepare($sql);
+     
+        $stmt->execute(array('asortyment' => $asortyment_id,'data' => $data));
+      
+        $wynik = $stmt->fetchAll();
+        dump($wynik);
+        return $wynik['0']['CalkowitaIloscSuszu'];
        // var_dump($stmt->fetchAll());die;
         //return json_encode($wynik);
 

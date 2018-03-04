@@ -47,7 +47,7 @@ class NarzedziaProdukcyjneController extends Controller
     }
 
      /**
-     * @Route("/NarzedziaProdukcyjne/tworzenieRaportuSuszenia", name="tworzenieRaportuSuszenia")
+     * @Route("/NarzedziaProdukcyjne/RaportSuszenia/Tworzenie/tworzenieRaportuSuszenia", name="tworzenieRaportuSuszenia")
      */
     public function tworzRaportSuszenia(Request $request)
     {
@@ -56,7 +56,7 @@ class NarzedziaProdukcyjneController extends Controller
        
         // only handles data on POST
         $form->handleRequest($request);
-        //dump($form);
+        dump($form);
 
         if ($form->isSubmitted() && $form->isValid())
          {  
@@ -216,7 +216,7 @@ class NarzedziaProdukcyjneController extends Controller
             }
 
 
-        return $this->render('NarzedziaProdukcyjne/RaportSuszenia/tworzRaportSuszenia.html.twig', [
+        return $this->render('NarzedziaProdukcyjne/RaportSuszenia/Tworzenie/tworzRaportSuszenia.html.twig', [
             'dodajDaneSuszeniaForm' => $form->createView()
         ]);
 
@@ -225,32 +225,90 @@ class NarzedziaProdukcyjneController extends Controller
 
     
      /**
-     * @Route("/NarzedziaProdukcyjne/dodajInfoDodatkowe", name="dodajInfoDodatkowe")
+     * @Route("/NarzedziaProdukcyjne/RaportSuszenia/Tworzenie/dodajInfoDodatkowe", name="dodajInfoDodatkowe")
      */
     public function dodajInfoDodatkowe(Request $request)
     {
 
         $form_info_dodatkowe = $this->createForm(dodajInfoDodatkoweFormType::class);
         $form_info_dodatkowe->handleRequest($request);
+        $em = $this->getDoctrine()->getManager();
+
+        dump($form_info_dodatkowe);
+        $data_form = $form_info_dodatkowe->get('data')->getData();
+        dump($data_form);
+        
 
          //Obsługa formularza info dodatkowe
          if ($form_info_dodatkowe->getClickedButton() && 'dodajInfoDodatkowe' === $form_info_dodatkowe->getClickedButton()->getName())
          {   
-             $wiadomosc = 'Guzik dziala';
-             $info = ['info' => $wiadomosc];
-             return new JsonResponse($info); 
-             
-             $data_form = $form_info_dodatkowe->get('data')->getData();
-             dump($data_form);
            
              if ($form_info_dodatkowe->isSubmitted() && $form_info_dodatkowe->isValid())
           {
-             $wiadomosc = 'Form dziala';
-             $info2 = ['info2' => $wiadomosc];
-             return new JsonResponse($info2);     
+            $dane_istnieja = $em->getRepository('AppBundle:DaneSuszenia')->findOneBy(array('Asortyment' => $form_info_dodatkowe->get('asortyment')->getData(),'nrSuszarni' => $form_info_dodatkowe->get('nrSuszarni')->getData(), 'data' => $form_info_dodatkowe->get('data')->getData() ));
+          
+            if(!$dane_istnieja)
+            {
+                $wiadomosc = 'Brak raportu';
+                $info = ['info' => $wiadomosc];
+                return new JsonResponse($info);
+            } else
+            {
+
+                $dane_istnieja->setOcenaTowaruZmiany1($form_info_dodatkowe->get('ocenaTowaruZmiany1')->getData());
+                $dane_istnieja->setOcenaTowaruZmiany2($form_info_dodatkowe->get('ocenaTowaruZmiany2')->getData());
+                $dane_istnieja->setOcenaTowaruZmiany3($form_info_dodatkowe->get('ocenaTowaruZmiany3')->getData());
+
+                $dane_istnieja->setIloscSuszuZmiana1($form_info_dodatkowe->get('iloscSuszuZmiana1')->getData());
+                $dane_istnieja->setIloscSuszuZmiana2($form_info_dodatkowe->get('iloscSuszuZmiana2')->getData());
+                $dane_istnieja->setIloscSuszuZmiana3($form_info_dodatkowe->get('iloscSuszuZmiana3')->getData());
+
+                $dane_istnieja->setCalkowitaIloscSuszu($form_info_dodatkowe->get('calkowitaIloscSuszu')->getData());
+
+                $dane_istnieja->setDostawca($form_info_dodatkowe->get('dostawca')->getData());
+
+                $dane_istnieja->setUwagi($form_info_dodatkowe->get('uwagi')->getData());
+
+                $dane_istnieja->setOpisZdjecia($form_info_dodatkowe->get('opisZdjecia')->getData());              
+
+                $em->flush();
+
+                
+                $asortyment_z_form = $form_info_dodatkowe->get('asortyment')->getData(); //Obiekt
+                $asortyment_id = $asortyment_z_form->getId();
+                $asortyment = $asortyment_z_form->getAsortyment();
+
+                $data_form = $form_info_dodatkowe->get('data')->getData();
+                $data_raportu = date_format($data_form, 'Y-m-d'); //Zamieniamy obiekt na string
+
+                $nr_suszarni = $form_info_dodatkowe->get('nrSuszarni')->getData();
+
+                $dane_z_bazy = $this->getDoctrine()
+                ->getRepository('AppBundle:DaneSuszenia')
+                ->raportSuszeniaDaneDodatkowe($asortyment_id,$data_raportu,$nr_suszarni);
+
+                $srednia_wilgotnosc = $this->getDoctrine()
+                ->getRepository('AppBundle:DaneSuszenia')
+                ->dziennaSredniaWilgotnosc($asortyment_id,$data_raportu,$nr_suszarni);
+
+                $ilosc_suszu_z_suszarni = $this->getDoctrine()
+                ->getRepository('AppBundle:DaneSuszenia')
+                ->dziennaIloscSuszuDlaSuszarni($asortyment_id,$data_raportu,$nr_suszarni);
+
+                $ilosc_suszu_z_dnia = $this->getDoctrine()
+                ->getRepository('AppBundle:DaneSuszenia')
+                ->calkowitaIloscSuszuDanegoDnia($asortyment_id,$data_raportu);
+
+                
+                $wiadomosc = 'Dane zostaly zapisane';
+                $info = ['raport' => $dane_z_bazy,'asortyment' => $asortyment, 'srednia_wilg' => $srednia_wilgotnosc, 'ilosc_suszu_z_suszarni' => $ilosc_suszu_z_suszarni , 'ilosc_suszu_z_dnia' => $ilosc_suszu_z_dnia ,'info' => $wiadomosc];
+                return new JsonResponse($info);  
+            }
+
+                 
           }
 
-          if ($form->isSubmitted() && !$form->isValid())
+          if ($form_info_dodatkowe->isSubmitted() && !$form_info_dodatkowe->isValid())
             {   
                 $wiadomosc = 'Zle dane';
                 $info = ['info' => $wiadomosc];
@@ -262,7 +320,7 @@ class NarzedziaProdukcyjneController extends Controller
 
 
        
-         return $this->render('NarzedziaProdukcyjne/RaportSuszenia/dodajInfoDodatkowe.html.twig', [
+         return $this->render('NarzedziaProdukcyjne/RaportSuszenia/Tworzenie/dodajInfoDodatkowe.html.twig', [
             'dodajInfoDodatkoweForm' => $form_info_dodatkowe->createView()
         ]);
 

@@ -7,6 +7,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: pl
+    app.path.raporty_images: /images/uploaded'
 
 framework:
     #esi: ~
@@ -79,3 +80,15 @@ fos_user:
     from_email:
         address: "schomej@jaworski.com.com"
         sender_name: "Szymon"
+
+vich_uploader:
+    db_driver: orm
+    mappings:
+        product_image:
+            uri_prefix: '%app.path.raporty_images%'
+            upload_destination: '%kernel.root_dir%/../web/images/uploaded'
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true
+
+

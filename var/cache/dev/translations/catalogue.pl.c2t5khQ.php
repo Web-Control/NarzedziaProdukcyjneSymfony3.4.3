@@ -187,6 +187,11 @@ Zespół.
     'form.choice.Admin' => 'Administrator',
     'form.choice.Jakosc' => 'Menadżer Jakości',
   ),
+  'VichUploaderBundle' => 
+  array (
+    'download' => 'Pobierz',
+    'form.label.delete' => 'Usunąć?',
+  ),
 ));
 
 

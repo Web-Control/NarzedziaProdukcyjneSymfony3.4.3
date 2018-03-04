@@ -7,15 +7,18 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use AppBundle\Entity\AsortymentSuszu;
 use AppBundle\Repository\AsortymentSuszuRepository;
 use AppBundle\Entity\DaneSuszenia;
 use AppBundle\Repository\DaneSuszeniaRepository;
 use AppBundle\Entity\User;
+use AppBundle\Repository\UserRepository;
 
 
 
@@ -49,17 +52,17 @@ class dodajInfoDodatkoweFormType extends AbstractType
             // this is actually the default format for single_text
             'format' => 'yyyy-MM-dd',
         ))
-        ->add('ocenaTowaruZmiany1')
-        ->add('ocenaTowaruZmiany2')
-        ->add('ocenaTowaruZmiany3')
-        ->add('iloscSuszuZmiana1')
-        ->add('iloscSuszuZmiana2')
-        ->add('iloscSuszuZmiana3')
-        ->add('calkowitaIloscSuszu')
-        ->add('dostawca')
-        ->add('uwagi')
-        ->add('zdjecia')
-        ->add('opisZdjecia')
+        ->add('ocenaTowaruZmiany1',TextType::class,array('required'   => false))
+        ->add('ocenaTowaruZmiany2',TextType::class,array('required'   => false))
+        ->add('ocenaTowaruZmiany3',TextType::class,array('required'   => false))
+        ->add('iloscSuszuZmiana1',IntegerType::class,array('required'   => false))
+        ->add('iloscSuszuZmiana2',IntegerType::class,array('required'   => false))
+        ->add('iloscSuszuZmiana3',IntegerType::class,array('required'   => false))
+        ->add('calkowitaIloscSuszu',IntegerType::class,array('required'   => false))
+        ->add('dostawca',TextType::class,array('required'   => false))
+        ->add('uwagi',TextType::class,array('required'   => false))
+        ->add('zdjecia', FileType::class,array('required'   => false))
+        ->add('opisZdjecia',TextType::class,array('required'   => false))
         
         ->add('dodajInfoDodatkowe', SubmitType::class, array('label' => 'Zapisz','attr' => ['class' => 'btn btn-primary'] ));
        
@@ -71,6 +74,7 @@ class dodajInfoDodatkoweFormType extends AbstractType
     {
 
         $resolver->setDefaults([
+            // 'csrf_protection' => false,
             'data_class' => 'AppBundle\Entity\DaneSuszenia'
         ]);
 

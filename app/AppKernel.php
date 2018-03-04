@@ -19,7 +19,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
-           // new Beberlei\DoctrineExtensions\
+            new Vich\UploaderBundle\VichUploaderBundle(), 
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
